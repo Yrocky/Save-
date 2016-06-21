@@ -1,18 +1,18 @@
 //
-//  HLLInputView.m
+//  HLLKeyboardView.m
 //  Save+
 //
-//  Created by Youngrocky on 16/6/17.
+//  Created by Youngrocky on 16/6/21.
 //  Copyright © 2016年 Rocky Young. All rights reserved.
 //
 
-#import "HLLInputView.h"
+#import "HLLKeyboardView.h"
 
-@implementation HLLInputView
+@implementation HLLKeyboardView
 
 
 - (void)awakeFromNib{
-    
+
     [super awakeFromNib];
     
     
@@ -21,16 +21,17 @@
 #pragma mark - HLLNibProtocol
 
 + (instancetype)hll_loadWithNib{
-    
-    return [[[NSBundle mainBundle] loadNibNamed:[HLLInputView hll_nibName] owner:self options:nil] firstObject];
+
+    return [[[NSBundle mainBundle] loadNibNamed:[HLLKeyboardView hll_nibName] owner:self options:nil] firstObject];
 }
 
 + (NSString *)hll_nibName{
-    
-    return @"HLLInputView";
+
+    return @"HLLKeyboardView";
 }
 
 #pragma mark - API
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -39,5 +40,6 @@
     // Drawing code
 }
 */
+
 
 @end
