@@ -36,6 +36,13 @@
 		D75BCB081D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75BCB061D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.xib */; };
 		D75BCB0B1D18D8AA00FDF5F3 /* HLLCategoryCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB0A1D18D8AA00FDF5F3 /* HLLCategoryCollectionView.m */; };
 		D75BCB0E1D18EC2600FDF5F3 /* HLLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB0D1D18EC2600FDF5F3 /* HLLCategory.m */; };
+		D75BCB151D19214600FDF5F3 /* HLLKeyBoardInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB141D19214600FDF5F3 /* HLLKeyBoardInputButton.m */; };
+		D75BCB261D1922F900FDF5F3 /* UIButton+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB1B1D1922F900FDF5F3 /* UIButton+ImageWithColor.m */; };
+		D75BCB271D1922F900FDF5F3 /* UIColor+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB1D1D1922F900FDF5F3 /* UIColor+Common.m */; };
+		D75BCB281D1922F900FDF5F3 /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB1F1D1922F900FDF5F3 /* UIImage+Common.m */; };
+		D75BCB291D1922F900FDF5F3 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB211D1922F900FDF5F3 /* UIImage+Tint.m */; };
+		D75BCB2A1D1922F900FDF5F3 /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB231D1922F900FDF5F3 /* UIView+Common.m */; };
+		D75BCB2B1D1922F900FDF5F3 /* UIView+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB251D1922F900FDF5F3 /* UIView+Round.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +98,21 @@
 		D75BCB0D1D18EC2600FDF5F3 /* HLLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCategory.m; sourceTree = "<group>"; };
 		D75BCB111D190CC500FDF5F3 /* HLLNibCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLNibCellProtocol.h; sourceTree = "<group>"; };
 		D75BCB121D190CC500FDF5F3 /* HLLNibProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLNibProtocol.h; sourceTree = "<group>"; };
+		D75BCB131D19214600FDF5F3 /* HLLKeyBoardInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLKeyBoardInputButton.h; sourceTree = "<group>"; };
+		D75BCB141D19214600FDF5F3 /* HLLKeyBoardInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLKeyBoardInputButton.m; sourceTree = "<group>"; };
+		D75BCB1A1D1922F900FDF5F3 /* UIButton+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageWithColor.h"; sourceTree = "<group>"; };
+		D75BCB1B1D1922F900FDF5F3 /* UIButton+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageWithColor.m"; sourceTree = "<group>"; };
+		D75BCB1C1D1922F900FDF5F3 /* UIColor+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Common.h"; sourceTree = "<group>"; };
+		D75BCB1D1D1922F900FDF5F3 /* UIColor+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Common.m"; sourceTree = "<group>"; };
+		D75BCB1E1D1922F900FDF5F3 /* UIImage+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
+		D75BCB1F1D1922F900FDF5F3 /* UIImage+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
+		D75BCB201D1922F900FDF5F3 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		D75BCB211D1922F900FDF5F3 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
+		D75BCB221D1922F900FDF5F3 /* UIView+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Common.h"; sourceTree = "<group>"; };
+		D75BCB231D1922F900FDF5F3 /* UIView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Common.m"; sourceTree = "<group>"; };
+		D75BCB241D1922F900FDF5F3 /* UIView+Round.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Round.h"; sourceTree = "<group>"; };
+		D75BCB251D1922F900FDF5F3 /* UIView+Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Round.m"; sourceTree = "<group>"; };
+		D75BCB2C1D19233300FDF5F3 /* DefaineManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaineManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +170,10 @@
 				D75BCAA61D13ED0900FDF5F3 /* AppDelegate.m */,
 				D75BCAD61D13EED000FDF5F3 /* Storyboard */,
 				D75BCAED1D18D29700FDF5F3 /* Controller */,
-				D75BCAEC1D18D28100FDF5F3 /* Model */,
 				D75BCACE1D13EE4000FDF5F3 /* View */,
+				D75BCAEC1D18D28100FDF5F3 /* Model */,
+				D75BCB171D19226A00FDF5F3 /* Utilities */,
+				D75BCB161D19226A00FDF5F3 /* Third-Party */,
 				D75BCAD41D13EE6500FDF5F3 /* Resource */,
 				D75BCAC81D13ED8900FDF5F3 /* File */,
 				D75BCAA21D13ED0900FDF5F3 /* Supporting Files */,
@@ -201,6 +225,8 @@
 				D75BCB041D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.h */,
 				D75BCB051D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.m */,
 				D75BCB061D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.xib */,
+				D75BCB131D19214600FDF5F3 /* HLLKeyBoardInputButton.h */,
+				D75BCB141D19214600FDF5F3 /* HLLKeyBoardInputButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +296,49 @@
 				D75BCB121D190CC500FDF5F3 /* HLLNibProtocol.h */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D75BCB161D19226A00FDF5F3 /* Third-Party */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Third-Party";
+			sourceTree = "<group>";
+		};
+		D75BCB171D19226A00FDF5F3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D75BCB181D19226A00FDF5F3 /* Category */,
+				D75BCB191D19226A00FDF5F3 /* Define */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D75BCB181D19226A00FDF5F3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D75BCB1A1D1922F900FDF5F3 /* UIButton+ImageWithColor.h */,
+				D75BCB1B1D1922F900FDF5F3 /* UIButton+ImageWithColor.m */,
+				D75BCB1C1D1922F900FDF5F3 /* UIColor+Common.h */,
+				D75BCB1D1D1922F900FDF5F3 /* UIColor+Common.m */,
+				D75BCB1E1D1922F900FDF5F3 /* UIImage+Common.h */,
+				D75BCB1F1D1922F900FDF5F3 /* UIImage+Common.m */,
+				D75BCB201D1922F900FDF5F3 /* UIImage+Tint.h */,
+				D75BCB211D1922F900FDF5F3 /* UIImage+Tint.m */,
+				D75BCB221D1922F900FDF5F3 /* UIView+Common.h */,
+				D75BCB231D1922F900FDF5F3 /* UIView+Common.m */,
+				D75BCB241D1922F900FDF5F3 /* UIView+Round.h */,
+				D75BCB251D1922F900FDF5F3 /* UIView+Round.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D75BCB191D19226A00FDF5F3 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				D75BCB2C1D19233300FDF5F3 /* DefaineManager.h */,
+			);
+			path = Define;
 			sourceTree = "<group>";
 		};
 		F581B8B936A840EE44657540 /* Frameworks */ = {
@@ -440,20 +509,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D75BCB271D1922F900FDF5F3 /* UIColor+Common.m in Sources */,
+				D75BCB151D19214600FDF5F3 /* HLLKeyBoardInputButton.m in Sources */,
 				D75BCAE71D13F04D00FDF5F3 /* Lato-Bold.ttf in Sources */,
 				D75BCAF31D18D2FE00FDF5F3 /* HLLBill.m in Sources */,
 				D75BCB0E1D18EC2600FDF5F3 /* HLLCategory.m in Sources */,
+				D75BCB2B1D1922F900FDF5F3 /* UIView+Round.m in Sources */,
 				D75BCAE81D13F04D00FDF5F3 /* Lato-Light.ttf in Sources */,
 				D75BCAE91D13F04D00FDF5F3 /* Lato-Regular.ttf in Sources */,
+				D75BCB2A1D1922F900FDF5F3 /* UIView+Common.m in Sources */,
+				D75BCB281D1922F900FDF5F3 /* UIImage+Common.m in Sources */,
 				D75BCAEA1D13F04D00FDF5F3 /* Lato-Thin.ttf in Sources */,
 				D75BCAFC1D18D57400FDF5F3 /* HLLCategoryView.m in Sources */,
 				D75BCAF61D18D31E00FDF5F3 /* HLLKeyboardView.m in Sources */,
 				D75BCB0B1D18D8AA00FDF5F3 /* HLLCategoryCollectionView.m in Sources */,
+				D75BCB291D1922F900FDF5F3 /* UIImage+Tint.m in Sources */,
 				D75BCAF01D18D29700FDF5F3 /* ViewController.m in Sources */,
 				D75BCAEB1D13F04D00FDF5F3 /* Lato-ThinItalic.ttf in Sources */,
 				D75BCAD21D13EE4000FDF5F3 /* HLLInputView.m in Sources */,
 				D75BCAA71D13ED0900FDF5F3 /* AppDelegate.m in Sources */,
 				D75BCB071D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.m in Sources */,
+				D75BCB261D1922F900FDF5F3 /* UIButton+ImageWithColor.m in Sources */,
 				D75BCAA41D13ED0900FDF5F3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
