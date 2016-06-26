@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "HLLNibCellProtocol.h"
 
-
 @interface HLLCategoryCollectionViewCell : UICollectionViewCell<HLLNibCellProtocol>
 
 @end

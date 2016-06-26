@@ -11,4 +11,14 @@
 
 @interface HLLInputView : UIView<HLLNibProtocol>
 
+@property (nonatomic ,assign ,readonly) BOOL nextCommit;
+
+- (void) updateCategoryIconWithImageName:(NSString *)imageName
+                               withColor:(UIColor *)color;
+
+- (void) updateAmountWithNumber:(NSInteger)number;
+
+- (void) delelteNumber;
+
+- (void) clearInput;
 @end

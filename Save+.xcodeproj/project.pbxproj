@@ -43,6 +43,13 @@
 		D75BCB291D1922F900FDF5F3 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB211D1922F900FDF5F3 /* UIImage+Tint.m */; };
 		D75BCB2A1D1922F900FDF5F3 /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB231D1922F900FDF5F3 /* UIView+Common.m */; };
 		D75BCB2B1D1922F900FDF5F3 /* UIView+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB251D1922F900FDF5F3 /* UIView+Round.m */; };
+		D75BCB2F1D1928FF00FDF5F3 /* HLLCategoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB2E1D1928FF00FDF5F3 /* HLLCategoryHelper.m */; };
+		D75BCB321D1933FC00FDF5F3 /* HLLCategoryCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB311D1933FC00FDF5F3 /* HLLCategoryCellContentView.m */; };
+		D75BCB351D1949DE00FDF5F3 /* HLLKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB341D1949DE00FDF5F3 /* HLLKeyboardController.m */; };
+		D75BCB381D1989B000FDF5F3 /* HLLKeyboardSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCB371D1989B000FDF5F3 /* HLLKeyboardSplitView.m */; };
+		D766A83A1D201271005D769C /* HLLNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = D766A8391D201271005D769C /* HLLNoteView.m */; };
+		D766A83D1D2012A2005D769C /* HLLCommitView.m in Sources */ = {isa = PBXBuildFile; fileRef = D766A83C1D2012A2005D769C /* HLLCommitView.m */; };
+		D766A8411D202387005D769C /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D766A8401D202387005D769C /* UIPlaceHolderTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +120,22 @@
 		D75BCB241D1922F900FDF5F3 /* UIView+Round.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Round.h"; sourceTree = "<group>"; };
 		D75BCB251D1922F900FDF5F3 /* UIView+Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Round.m"; sourceTree = "<group>"; };
 		D75BCB2C1D19233300FDF5F3 /* DefaineManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaineManager.h; sourceTree = "<group>"; };
+		D75BCB2D1D1928FF00FDF5F3 /* HLLCategoryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCategoryHelper.h; sourceTree = "<group>"; };
+		D75BCB2E1D1928FF00FDF5F3 /* HLLCategoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCategoryHelper.m; sourceTree = "<group>"; };
+		D75BCB301D1933FC00FDF5F3 /* HLLCategoryCellContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCategoryCellContentView.h; sourceTree = "<group>"; };
+		D75BCB311D1933FC00FDF5F3 /* HLLCategoryCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCategoryCellContentView.m; sourceTree = "<group>"; };
+		D75BCB331D1949DE00FDF5F3 /* HLLKeyboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLKeyboardController.h; sourceTree = "<group>"; };
+		D75BCB341D1949DE00FDF5F3 /* HLLKeyboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLKeyboardController.m; sourceTree = "<group>"; };
+		D75BCB361D1989B000FDF5F3 /* HLLKeyboardSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLKeyboardSplitView.h; sourceTree = "<group>"; };
+		D75BCB371D1989B000FDF5F3 /* HLLKeyboardSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLKeyboardSplitView.m; sourceTree = "<group>"; };
+		D75BCB391D19A48500FDF5F3 /* HLLAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLAnimationProtocol.h; sourceTree = "<group>"; };
+		D766A8381D201271005D769C /* HLLNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLNoteView.h; sourceTree = "<group>"; };
+		D766A8391D201271005D769C /* HLLNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLNoteView.m; sourceTree = "<group>"; };
+		D766A83B1D2012A2005D769C /* HLLCommitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCommitView.h; sourceTree = "<group>"; };
+		D766A83C1D2012A2005D769C /* HLLCommitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCommitView.m; sourceTree = "<group>"; };
+		D766A83F1D202387005D769C /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		D766A8401D202387005D769C /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		D766A8421D2025A1005D769C /* DefaineAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaineAnimation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,16 +240,24 @@
 				D75BCAFA1D18D57400FDF5F3 /* HLLCategoryView.h */,
 				D75BCAFB1D18D57400FDF5F3 /* HLLCategoryView.m */,
 				D75BCAFD1D18D58200FDF5F3 /* HLLCategoryView.xib */,
-				D75BCAF41D18D31E00FDF5F3 /* HLLKeyboardView.h */,
-				D75BCAF51D18D31E00FDF5F3 /* HLLKeyboardView.m */,
-				D75BCAF71D18D32700FDF5F3 /* HLLKeyboardView.xib */,
 				D75BCB091D18D8AA00FDF5F3 /* HLLCategoryCollectionView.h */,
 				D75BCB0A1D18D8AA00FDF5F3 /* HLLCategoryCollectionView.m */,
 				D75BCB041D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.h */,
 				D75BCB051D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.m */,
 				D75BCB061D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.xib */,
+				D75BCB301D1933FC00FDF5F3 /* HLLCategoryCellContentView.h */,
+				D75BCB311D1933FC00FDF5F3 /* HLLCategoryCellContentView.m */,
+				D75BCAF41D18D31E00FDF5F3 /* HLLKeyboardView.h */,
+				D75BCAF51D18D31E00FDF5F3 /* HLLKeyboardView.m */,
+				D75BCAF71D18D32700FDF5F3 /* HLLKeyboardView.xib */,
 				D75BCB131D19214600FDF5F3 /* HLLKeyBoardInputButton.h */,
 				D75BCB141D19214600FDF5F3 /* HLLKeyBoardInputButton.m */,
+				D75BCB361D1989B000FDF5F3 /* HLLKeyboardSplitView.h */,
+				D75BCB371D1989B000FDF5F3 /* HLLKeyboardSplitView.m */,
+				D766A8381D201271005D769C /* HLLNoteView.h */,
+				D766A8391D201271005D769C /* HLLNoteView.m */,
+				D766A83B1D2012A2005D769C /* HLLCommitView.h */,
+				D766A83C1D2012A2005D769C /* HLLCommitView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,8 +274,8 @@
 		D75BCAD61D13EED000FDF5F3 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				D75BCAD71D13EED000FDF5F3 /* LaunchScreen.storyboard */,
 				D75BCAD81D13EED000FDF5F3 /* Main.storyboard */,
+				D75BCAD71D13EED000FDF5F3 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -275,6 +306,8 @@
 				D75BCAF21D18D2FE00FDF5F3 /* HLLBill.m */,
 				D75BCB0C1D18EC2600FDF5F3 /* HLLCategory.h */,
 				D75BCB0D1D18EC2600FDF5F3 /* HLLCategory.m */,
+				D75BCB2D1D1928FF00FDF5F3 /* HLLCategoryHelper.h */,
+				D75BCB2E1D1928FF00FDF5F3 /* HLLCategoryHelper.m */,
 				D75BCB101D190CC500FDF5F3 /* Protocol */,
 			);
 			path = Model;
@@ -285,6 +318,8 @@
 			children = (
 				D75BCAEE1D18D29700FDF5F3 /* ViewController.h */,
 				D75BCAEF1D18D29700FDF5F3 /* ViewController.m */,
+				D75BCB331D1949DE00FDF5F3 /* HLLKeyboardController.h */,
+				D75BCB341D1949DE00FDF5F3 /* HLLKeyboardController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +329,7 @@
 			children = (
 				D75BCB111D190CC500FDF5F3 /* HLLNibCellProtocol.h */,
 				D75BCB121D190CC500FDF5F3 /* HLLNibProtocol.h */,
+				D75BCB391D19A48500FDF5F3 /* HLLAnimationProtocol.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -301,6 +337,7 @@
 		D75BCB161D19226A00FDF5F3 /* Third-Party */ = {
 			isa = PBXGroup;
 			children = (
+				D766A83E1D202387005D769C /* PlaceHolderTextView */,
 			);
 			path = "Third-Party";
 			sourceTree = "<group>";
@@ -337,8 +374,18 @@
 			isa = PBXGroup;
 			children = (
 				D75BCB2C1D19233300FDF5F3 /* DefaineManager.h */,
+				D766A8421D2025A1005D769C /* DefaineAnimation.h */,
 			);
 			path = Define;
+			sourceTree = "<group>";
+		};
+		D766A83E1D202387005D769C /* PlaceHolderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				D766A83F1D202387005D769C /* UIPlaceHolderTextView.h */,
+				D766A8401D202387005D769C /* UIPlaceHolderTextView.m */,
+			);
+			path = PlaceHolderTextView;
 			sourceTree = "<group>";
 		};
 		F581B8B936A840EE44657540 /* Frameworks */ = {
@@ -512,6 +559,7 @@
 				D75BCB271D1922F900FDF5F3 /* UIColor+Common.m in Sources */,
 				D75BCB151D19214600FDF5F3 /* HLLKeyBoardInputButton.m in Sources */,
 				D75BCAE71D13F04D00FDF5F3 /* Lato-Bold.ttf in Sources */,
+				D75BCB321D1933FC00FDF5F3 /* HLLCategoryCellContentView.m in Sources */,
 				D75BCAF31D18D2FE00FDF5F3 /* HLLBill.m in Sources */,
 				D75BCB0E1D18EC2600FDF5F3 /* HLLCategory.m in Sources */,
 				D75BCB2B1D1922F900FDF5F3 /* UIView+Round.m in Sources */,
@@ -520,9 +568,14 @@
 				D75BCB2A1D1922F900FDF5F3 /* UIView+Common.m in Sources */,
 				D75BCB281D1922F900FDF5F3 /* UIImage+Common.m in Sources */,
 				D75BCAEA1D13F04D00FDF5F3 /* Lato-Thin.ttf in Sources */,
+				D75BCB2F1D1928FF00FDF5F3 /* HLLCategoryHelper.m in Sources */,
 				D75BCAFC1D18D57400FDF5F3 /* HLLCategoryView.m in Sources */,
 				D75BCAF61D18D31E00FDF5F3 /* HLLKeyboardView.m in Sources */,
 				D75BCB0B1D18D8AA00FDF5F3 /* HLLCategoryCollectionView.m in Sources */,
+				D75BCB351D1949DE00FDF5F3 /* HLLKeyboardController.m in Sources */,
+				D75BCB381D1989B000FDF5F3 /* HLLKeyboardSplitView.m in Sources */,
+				D766A83D1D2012A2005D769C /* HLLCommitView.m in Sources */,
+				D766A8411D202387005D769C /* UIPlaceHolderTextView.m in Sources */,
 				D75BCB291D1922F900FDF5F3 /* UIImage+Tint.m in Sources */,
 				D75BCAF01D18D29700FDF5F3 /* ViewController.m in Sources */,
 				D75BCAEB1D13F04D00FDF5F3 /* Lato-ThinItalic.ttf in Sources */,
@@ -530,6 +583,7 @@
 				D75BCAA71D13ED0900FDF5F3 /* AppDelegate.m in Sources */,
 				D75BCB071D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.m in Sources */,
 				D75BCB261D1922F900FDF5F3 /* UIButton+ImageWithColor.m in Sources */,
+				D766A83A1D201271005D769C /* HLLNoteView.m in Sources */,
 				D75BCAA41D13ED0900FDF5F3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,8 +632,11 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Save+/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -622,7 +679,10 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Save+/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -647,6 +707,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "HLL.Save-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -660,6 +721,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "HLL.Save-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

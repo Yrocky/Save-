@@ -8,7 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "HLLNibProtocol.h"
+#import "HLLAnimationProtocol.h"
 
-@interface HLLCategoryView : UIView<HLLNibProtocol>
+@class HLLCategoryView;
+@protocol HLLCategoryViewDelegate <NSObject>
 
+@optional;
+// 挑选某一个分类
+- (void) categoryView:(HLLCategoryView *)categoryView didSelectedCategoryItem:(id)item;
+// 点击最后一个设置按钮
+- (void) categoryViewDidSetupCategories;
+
+@end
+@interface HLLCategoryView : UIView<HLLNibProtocol,HLLAnimationProtocol>
+
+@property (nonatomic ,weak) id<HLLCategoryViewDelegate> delegate;
+
+- (void) reloadCategoryView;
+
+- (void) clearCategory;
 @end

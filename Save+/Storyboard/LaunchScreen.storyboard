@@ -16,12 +16,27 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_bg" translatesAutoresizingMaskIntoConstraints="NO" id="QEt-Af-Sb3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QEt-Af-Sb3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="KwG-3B-lvv"/>
+                            <constraint firstItem="QEt-Af-Sb3" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="gup-Zl-fxa"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="QEt-Af-Sb3" secondAttribute="bottom" id="vUz-Ea-qCu"/>
+                            <constraint firstAttribute="trailing" secondItem="QEt-Af-Sb3" secondAttribute="trailing" id="zoY-w6-WSf"/>
+                        </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="main_bg" width="320" height="568"/>
+    </resources>
 </document>

@@ -6,8 +6,6 @@
 //  Copyright © 2016年 Rocky Young. All rights reserved.
 //
 
-#import "LogDefine.h"
-#import "FontsDefine.h"
 
 
 #ifndef DefaineManager_h

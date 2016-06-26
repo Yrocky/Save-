@@ -4,16 +4,73 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HLLCategoryCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HLLCategoryCollectionViewCell" id="gTV-IL-0wX" customClass="HLLCategoryCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="116" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="116" height="120"/>
+                <subviews>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhF-Ve-IIT" customClass="HLLCategoryCellContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="116" height="99"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="category_icon_accommodation" translatesAutoresizingMaskIntoConstraints="NO" id="fPn-hC-vzc">
+                                <rect key="frame" x="41" y="37" width="33" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="FBz-RX-d3K"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="ZAc-b7-nX5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.52549019610000003" green="0.67450980390000004" blue="0.95686274510000002" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="fPn-hC-vzc" firstAttribute="centerX" secondItem="lhF-Ve-IIT" secondAttribute="centerX" id="0tm-wF-HVH"/>
+                            <constraint firstItem="fPn-hC-vzc" firstAttribute="centerY" secondItem="lhF-Ve-IIT" secondAttribute="centerY" id="OzX-Bf-I9Z"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                <color key="value" red="0.28235294119999998" green="0.30588235289999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="categoryIconImageView" destination="fPn-hC-vzc" id="yxH-DS-Ypy"/>
+                        </connections>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYa-u6-vhx">
+                        <rect key="frame" x="0.0" y="99" width="116" height="21"/>
+                        <color key="backgroundColor" red="0.70196078429999997" green="0.78039215689999997" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                        <color key="textColor" red="0.43529411764705883" green="0.50588235294117645" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstItem="lhF-Ve-IIT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="30S-XQ-eG4"/>
+                <constraint firstItem="iYa-u6-vhx" firstAttribute="top" secondItem="lhF-Ve-IIT" secondAttribute="bottom" id="6iN-86-leF"/>
+                <constraint firstAttribute="trailing" secondItem="lhF-Ve-IIT" secondAttribute="trailing" id="AaF-cT-IOv"/>
+                <constraint firstAttribute="trailing" secondItem="iYa-u6-vhx" secondAttribute="trailing" id="GPe-HJ-xvn"/>
+                <constraint firstAttribute="bottom" secondItem="iYa-u6-vhx" secondAttribute="bottom" id="W6V-3X-PSF"/>
+                <constraint firstItem="iYa-u6-vhx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ehg-xG-rrL"/>
+                <constraint firstItem="lhF-Ve-IIT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nbh-C9-4bU"/>
+            </constraints>
+            <size key="customSize" width="116" height="120"/>
+            <connections>
+                <outlet property="categoryContentView" destination="lhF-Ve-IIT" id="FTS-o9-EaM"/>
+                <outlet property="categoryNameLabel" destination="iYa-u6-vhx" id="ina-tI-KE4"/>
+            </connections>
+            <point key="canvasLocation" x="72" y="308"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="category_icon_accommodation" width="33" height="26"/>
+    </resources>
 </document>

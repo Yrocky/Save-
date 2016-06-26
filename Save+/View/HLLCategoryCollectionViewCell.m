@@ -7,14 +7,34 @@
 //
 
 #import "HLLCategoryCollectionViewCell.h"
+#import "HLLCategoryCellContentView.h"
+#import "HLLCategory.h"
 
+@interface HLLCategoryCollectionViewCell ()
+
+@property (weak, nonatomic) IBOutlet HLLCategoryCellContentView *categoryContentView;
+@property (weak, nonatomic) IBOutlet UILabel *categoryNameLabel;
+
+
+@end
 @implementation HLLCategoryCollectionViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.categoryContentView.backgroundColor = [UIColor clearColor];
+    self.categoryNameLabel.backgroundColor = [UIColor clearColor];
+    self.contentView.backgroundColor = [UIColor clearColor];
 }
 
+- (void)setSelected:(BOOL)selected{
+    
+    if (selected) {
+        [self.categoryContentView showCircleLayerAnimation];
+    }else{
+        [self.categoryContentView hidenCircleLayerAnimation];
+    }
+}
 #pragma mark - HLLNibCellProtocol
 
 + (UINib *) hll_nib{
@@ -27,9 +47,16 @@
     return @"HLLCategoryCollectionViewCell";
 }
 
-- (void) hll_configureCellWithData:(id)data{
+- (void) hll_configureCellWithData:(HLLCategory *)category{
 
+    UIImage * categoryIcon = [UIImage imageNamed:category.categoryIcon];
+    UIColor * categoryColor = [UIColor colorWithHexString:category.categoryColor];
     
+    self.categoryContentView.categoryIconImageView.image = [categoryIcon tintedGradientImageWithColor:categoryColor];
+    
+    self.categoryContentView.circleColor = categoryColor;
+    
+    self.categoryNameLabel.text = category.categoryName;
 }
 
 @end

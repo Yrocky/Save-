@@ -11,5 +11,13 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "DefaineManager.h"
+#import "DefaineAnimation.h"
+
+#import "UIColor+Common.h"
+#import "UIImage+Common.h"
+#import "UIImage+Tint.h"
+#import "UIButton+ImageWithColor.h"
+#import "UIView+Common.h"
 
 #endif /* PrefixHeader_pch */

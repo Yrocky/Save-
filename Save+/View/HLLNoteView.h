@@ -1,8 +1,8 @@
 //
-//  HLLKeyboardView.h
+//  HLLNoteView.h
 //  Save+
 //
-//  Created by Youngrocky on 16/6/21.
+//  Created by Youngrocky on 16/6/26.
 //  Copyright © 2016年 Rocky Young. All rights reserved.
 //
 
@@ -10,6 +10,8 @@
 #import "HLLNibProtocol.h"
 #import "HLLAnimationProtocol.h"
 
-@interface HLLKeyboardView : UIView<HLLNibProtocol,HLLAnimationProtocol>
+@interface HLLNoteView : UIView<HLLAnimationProtocol,HLLNibProtocol>
+
+- (void) clearNote;
 
 @end

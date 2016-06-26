@@ -163,7 +163,11 @@
 
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert{
     
-    NSScanner *scanner = [NSScanner scannerWithString:stringToConvert];
+    NSString * tempString = stringToConvert;
+    if ([stringToConvert hasPrefix:@"#"]) {
+        tempString = [stringToConvert substringFromIndex:1];
+    }
+    NSScanner *scanner = [NSScanner scannerWithString:tempString];
     unsigned hexNum;
     if (![scanner scanHexInt:&hexNum]) return nil;
     return [UIColor colorWithRGBHex:hexNum];

@@ -19,7 +19,7 @@
 /**
  *  分类的排列
  */
-@property NSNumber<RLMInt>      * categoryRank;
+@property NSInteger               categoryRank;
 
 /**
  *  分类的名称
@@ -40,6 +40,7 @@
  *  当前分类是否显示
  */
 @property BOOL                    active;
+
 
 @end
 

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "HLLCategoryHelper.h"
+
 
 @interface AppDelegate ()
 
@@ -16,10 +18,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [self loadCategory];
+    
     return YES;
 }
 
+- (void) loadCategory{
+    
+    NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
+    
+    BOOL load = [[userDefault valueForKey:@"loadCategory"] boolValue];
+    
+    if (!load) {
+        
+        [HLLCategoryHelper loadCategory];
+        
+        [userDefault setBool:YES forKey:@"loadCategory"];
+        
+        [userDefault synchronize];
+    }
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

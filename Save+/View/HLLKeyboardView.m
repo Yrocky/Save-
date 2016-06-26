@@ -8,14 +8,18 @@
 
 #import "HLLKeyboardView.h"
 
+@interface HLLKeyboardView ()
+
+@property (nonatomic ,assign) CGRect originalFrame;
+
+@end
 @implementation HLLKeyboardView
 
 
 - (void)awakeFromNib{
 
     [super awakeFromNib];
-    
-    
+
 }
 
 #pragma mark - HLLNibProtocol
@@ -30,16 +34,32 @@
     return @"HLLKeyboardView";
 }
 
-#pragma mark - API
+#pragma mark - HLLAnimationProtocol
 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)showAnimaiton{
+    
+    [UIView animateWithDuration:CommonAnimationDeration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.alpha = 1.0f;
+        self.frame = self.originalFrame;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
-*/
+
+- (void)hidenAnimation{
+    
+    CGRect frame = self.frame;
+    self.originalFrame = self.frame;
+    frame.origin.y = self.bottom;
+    
+    [UIView animateWithDuration:CommonAnimationDeration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.alpha = 0.0f;
+        self.frame = frame;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+#pragma mark - API
 
 
 @end
