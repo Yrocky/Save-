@@ -60,5 +60,5 @@
 #define  LATO_LIGHT     @"Lato-Light"
 #define  LATO_THIN_IT   @"Lato-ThinItalic"
 
-
+#define OnePixel 1 / [UIScreen mainScreen].scale
 #endif /* DefaineManager_h */

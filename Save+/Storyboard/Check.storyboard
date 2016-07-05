@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Data Source-->
         <scene sceneID="Zz1-bU-Gcd">
@@ -19,7 +24,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3r-Ox-9Nm" userLabel="CalendarView" customClass="FSCalendar">
-                                <color key="backgroundColor" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="inf-vs-Kxz"/>
                                 </constraints>
@@ -35,19 +39,67 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="weekdayHeight">
                                         <real key="value" value="40"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                        <color key="value" red="0.52549019610000003" green="0.67450980390000004" blue="0.95686274510000002" alpha="1" colorSpace="deviceRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
+                                        <color key="value" red="0.21334299840000001" green="0.58846356229999996" blue="0.62766426279999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" red="0.52549019610000003" green="0.67450980390000004" blue="0.95686274510000002" alpha="1" colorSpace="deviceRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                        <color key="value" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="38A-w7-gK4" id="oWZ-0m-C3g"/>
                                     <outlet property="delegate" destination="38A-w7-gK4" id="rfK-C0-fPb"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-50-rrk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-50-rrk">
                                 <color key="backgroundColor" red="0.51764705879999995" green="0.58039215690000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="cGs-0K-rOv">
                                     <frame key="frameInset" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.52549019610000003" green="0.67450980390000004" blue="0.95686274510000002" alpha="1" colorSpace="deviceRGB"/>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="KZ2-7o-ptG">
+                                    <frame key="frameInset" minY="200" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当天没有记账" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IL1-fE-RC1">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="XSC-7w-Jys"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="Yzn-bN-cFT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                                            <color key="textColor" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.21334299840000001" green="0.58846356229999996" blue="0.62766426279999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IL1-fE-RC1" secondAttribute="trailing" constant="20" id="3Gd-wo-rwQ"/>
+                                        <constraint firstItem="IL1-fE-RC1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KZ2-7o-ptG" secondAttribute="leading" constant="20" id="H29-vE-dYx"/>
+                                        <constraint firstItem="IL1-fE-RC1" firstAttribute="centerY" secondItem="KZ2-7o-ptG" secondAttribute="centerY" id="R5G-F9-exn"/>
+                                        <constraint firstItem="IL1-fE-RC1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KZ2-7o-ptG" secondAttribute="top" constant="20" id="kpT-qh-xLJ"/>
+                                        <constraint firstItem="IL1-fE-RC1" firstAttribute="centerX" secondItem="KZ2-7o-ptG" secondAttribute="centerX" id="n0B-ZN-fdu"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IL1-fE-RC1" secondAttribute="bottom" constant="20" id="pJH-q5-8cm"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="3Gd-wo-rwQ"/>
+                                            <exclude reference="H29-vE-dYx"/>
+                                            <exclude reference="kpT-qh-xLJ"/>
+                                            <exclude reference="pJH-q5-8cm"/>
+                                        </mask>
+                                    </variation>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="38A-w7-gK4" id="8et-k6-a5S"/>
+                                    <outlet property="delegate" destination="38A-w7-gK4" id="5ns-j3-dc1"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,6 +125,8 @@
                         <outlet property="billTableView" destination="aO8-50-rrk" id="cMD-84-HzJ"/>
                         <outlet property="calendarView" destination="N3r-Ox-9Nm" id="mCj-08-9SG"/>
                         <outlet property="calendarViewHeightConstraint" destination="inf-vs-Kxz" id="79B-4Y-bP5"/>
+                        <outlet property="tableFooterView" destination="KZ2-7o-ptG" id="R0w-bW-neE"/>
+                        <outlet property="tableHeaderView" destination="cGs-0K-rOv" id="Wtd-Bh-dS6"/>
                         <segue destination="Wbe-2S-vjY" kind="show" identifier="settingViewControllerIdentifier" id="1hN-Zb-MI6"/>
                     </connections>
                 </viewController>

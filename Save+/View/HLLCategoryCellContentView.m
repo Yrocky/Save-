@@ -60,6 +60,7 @@ static CGFloat animationDuration = .55f;
                                                            endAngle:2 *  3.14
                                                           clockwise:YES];
     _circleLayer.strokeColor = self.circleColor.CGColor;
+    _circleLayer.fillColor = self.circleColor.CGColor;
     _circleLayer.path = ovalPath.CGPath;
     
 }
@@ -72,6 +73,8 @@ static CGFloat animationDuration = .55f;
         return;
     }
     
+    UIImage * categoryImage = self.categoryIconImageView.image;
+    
     [CATransaction setAnimationDuration:animationDuration];
     
     [CATransaction begin];
@@ -80,10 +83,14 @@ static CGFloat animationDuration = .55f;
     
     self.circleLayer.transform = CATransform3DIdentity;
     
+    self.categoryIconImageView.image = [categoryImage tintedGradientImageWithColor:[UIColor whiteColor]];
+    
     [CATransaction commit];
 }
 
 - (void) hidenCircleLayerAnimation{
+
+    UIImage * categoryImage = self.categoryIconImageView.image;
 
     [CATransaction setAnimationDuration:animationDuration];
     
@@ -95,6 +102,8 @@ static CGFloat animationDuration = .55f;
     CGFloat scale = 0.5f;
     self.circleLayer.transform = CATransform3DScale(self.circleLayer.transform, scale, scale, scale);
 //    😂😂😂😂😂
+    
+    self.categoryIconImageView.image = [categoryImage tintedGradientImageWithColor:self.circleColor];
     [CATransaction commit];
 
 }

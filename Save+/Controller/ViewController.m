@@ -19,6 +19,9 @@
 #import "HLLSetting.h"
 #import "HLLCategory.h"
 #import "HLLLocationView.h"
+#import "FSCalendar.h"
+#import "HLLBillManager.h"
+
 
 @interface ViewController ()<HLLCategoryViewDelegate,HLLKeyboardControllerDelegate,HLLCommitViewDelegate>
 
@@ -69,7 +72,7 @@
     
     for (HLLBill * bill in billes) {
         
-        NSLog(@"bill:%@",bill);
+//        NSLog(@"bill:%@",bill);
         NSLog(@"bill'time:%@",bill.dateDetailString);
     }
 }
@@ -77,30 +80,27 @@
 #pragma mark - Method
 
 - (void) saveBill{
+    
+    FSCalendar * calendar = [[FSCalendar alloc] init];
 
-    RLMRealm * defaultRealm = [RLMRealm defaultRealm];
-    
-    //        NSLog(@"Path:%@",defaultRealm.configuration.fileURL);
-    
-    [defaultRealm beginWriteTransaction];
-    
     NSInteger amount = self.inputAmountView.amountNumber;
     
     // 使用 NSPredicate 查询
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"categoryIcon = %@ ",self.category.categoryIcon];
     RLMResults * categoriesResult = [HLLCategory objectsWithPredicate:pred];
     HLLCategory * category = [categoriesResult firstObject];
-
+    
     HLLBill * bill = [[HLLBill alloc] init];
     bill.category = category;
     bill.amount = [NSNumber numberWithInteger:amount];
     
     bill.note = self.noteView.note;
-    bill.date = [NSDate date];
+    //    bill.date = [calendar yesterdayOfDate: [NSDate date]];
+    bill.date = [calendar beginingOfMonthOfDate: [NSDate date]];
     
-    [defaultRealm addObject:bill];
+    HLLBillManager * billManager = [[HLLBillManager alloc] init];
     
-    [defaultRealm commitWriteTransaction];
+    [billManager addBill:bill];
     
     [self.inputAmountView clearInput];
     [self.noteView clearNote];

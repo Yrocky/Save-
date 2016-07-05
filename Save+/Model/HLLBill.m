@@ -31,8 +31,7 @@
 
 + (NSArray *)ignoredProperties
 {
-    return @[@"dateString",
-             @"dateDetailString",
+    return @[
              @"ID"];
 }
 

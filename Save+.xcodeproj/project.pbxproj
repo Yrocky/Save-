@@ -11,6 +11,11 @@
 		D732BE731D2A04B9000029A9 /* HLLLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D732BE721D2A04B9000029A9 /* HLLLocationView.m */; };
 		D744339A1D2A592900693546 /* ZASyncURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D74433991D2A592900693546 /* ZASyncURLConnection.m */; };
 		D744339D1D2A59A000693546 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D744339C1D2A59A000693546 /* UIImage+ImageEffects.m */; };
+		D74433A91D2B51D700693546 /* HLLBillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D74433A71D2B51D700693546 /* HLLBillTableViewCell.m */; };
+		D74433AA1D2B51D700693546 /* HLLBillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74433A81D2B51D700693546 /* HLLBillTableViewCell.xib */; };
+		D74433AD1D2B525000693546 /* HLLBillSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74433AC1D2B525000693546 /* HLLBillSectionHeaderView.m */; };
+		D74433AF1D2B525A00693546 /* HLLBillSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74433AE1D2B525A00693546 /* HLLBillSectionHeaderView.xib */; };
+		D74433B21D2B5C9D00693546 /* HLLBillManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D74433B11D2B5C9D00693546 /* HLLBillManager.m */; };
 		D75BCAA41D13ED0900FDF5F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCAA31D13ED0900FDF5F3 /* main.m */; };
 		D75BCAA71D13ED0900FDF5F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75BCAA61D13ED0900FDF5F3 /* AppDelegate.m */; };
 		D75BCAAF1D13ED0900FDF5F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D75BCAAE1D13ED0900FDF5F3 /* Assets.xcassets */; };
@@ -108,6 +113,14 @@
 		D74433991D2A592900693546 /* ZASyncURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASyncURLConnection.m; sourceTree = "<group>"; };
 		D744339B1D2A59A000693546 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		D744339C1D2A59A000693546 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		D74433A61D2B51D700693546 /* HLLBillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLBillTableViewCell.h; sourceTree = "<group>"; };
+		D74433A71D2B51D700693546 /* HLLBillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLBillTableViewCell.m; sourceTree = "<group>"; };
+		D74433A81D2B51D700693546 /* HLLBillTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLLBillTableViewCell.xib; sourceTree = "<group>"; };
+		D74433AB1D2B525000693546 /* HLLBillSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLBillSectionHeaderView.h; sourceTree = "<group>"; };
+		D74433AC1D2B525000693546 /* HLLBillSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLBillSectionHeaderView.m; sourceTree = "<group>"; };
+		D74433AE1D2B525A00693546 /* HLLBillSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLLBillSectionHeaderView.xib; sourceTree = "<group>"; };
+		D74433B01D2B5C9D00693546 /* HLLBillManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLBillManager.h; sourceTree = "<group>"; };
+		D74433B11D2B5C9D00693546 /* HLLBillManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLBillManager.m; sourceTree = "<group>"; };
 		D75BCA9F1D13ED0800FDF5F3 /* Save+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75BCAA31D13ED0900FDF5F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D75BCAA51D13ED0900FDF5F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -378,6 +391,9 @@
 				D78015C41D23A92E00A0CD13 /* HLLToggle.m */,
 				D732BE711D2A04B9000029A9 /* HLLLocationView.h */,
 				D732BE721D2A04B9000029A9 /* HLLLocationView.m */,
+				D74433AB1D2B525000693546 /* HLLBillSectionHeaderView.h */,
+				D74433AC1D2B525000693546 /* HLLBillSectionHeaderView.m */,
+				D74433AE1D2B525A00693546 /* HLLBillSectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,6 +449,8 @@
 				D75BCB2E1D1928FF00FDF5F3 /* HLLCategoryHelper.m */,
 				D78015B61D237F2800A0CD13 /* HLLTouchIDHelper.h */,
 				D78015B71D237F2800A0CD13 /* HLLTouchIDHelper.m */,
+				D74433B01D2B5C9D00693546 /* HLLBillManager.h */,
+				D74433B11D2B5C9D00693546 /* HLLBillManager.m */,
 				D78015BF1D23A1AE00A0CD13 /* DataSource */,
 				D75BCB101D190CC500FDF5F3 /* Protocol */,
 			);
@@ -544,6 +562,9 @@
 				D78015BA1D239EC300A0CD13 /* HLLSettingTableViewCell.h */,
 				D78015BB1D239EC300A0CD13 /* HLLSettingTableViewCell.m */,
 				D78015BC1D239EC300A0CD13 /* HLLSettingTableViewCell.xib */,
+				D74433A61D2B51D700693546 /* HLLBillTableViewCell.h */,
+				D74433A71D2B51D700693546 /* HLLBillTableViewCell.m */,
+				D74433A81D2B51D700693546 /* HLLBillTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -716,6 +737,7 @@
 				D75BCAD91D13EED000FDF5F3 /* LaunchScreen.storyboard in Resources */,
 				D766A8471D203637005D769C /* Check.storyboard in Resources */,
 				D75BCB081D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.xib in Resources */,
+				D74433AF1D2B525A00693546 /* HLLBillSectionHeaderView.xib in Resources */,
 				D75BCAFE1D18D58200FDF5F3 /* HLLCategoryView.xib in Resources */,
 				D75BCAE51D13EF8900FDF5F3 /* Lato-ThinItalic.ttf in Resources */,
 				D75BCAE41D13EF8900FDF5F3 /* Lato-Thin.ttf in Resources */,
@@ -728,6 +750,7 @@
 				D75BCAAF1D13ED0900FDF5F3 /* Assets.xcassets in Resources */,
 				D75BCAF81D18D32700FDF5F3 /* HLLKeyboardView.xib in Resources */,
 				D75BCADA1D13EED000FDF5F3 /* Main.storyboard in Resources */,
+				D74433AA1D2B51D700693546 /* HLLBillTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,11 +833,13 @@
 				D75BCAE81D13F04D00FDF5F3 /* Lato-Light.ttf in Sources */,
 				D78DD67E1D2836850060B2E7 /* UIView+FSExtension.m in Sources */,
 				D78DD67C1D2836850060B2E7 /* FSCalendarStickyHeader.m in Sources */,
+				D74433AD1D2B525000693546 /* HLLBillSectionHeaderView.m in Sources */,
 				D78DD6731D2836850060B2E7 /* FSCalendarAnimator.m in Sources */,
 				D75BCAE91D13F04D00FDF5F3 /* Lato-Regular.ttf in Sources */,
 				D78015E71D2611EE00A0CD13 /* LocationHelper.m in Sources */,
 				D78DD66F1D2836850060B2E7 /* FSCalendar+DateTools.m in Sources */,
 				D75BCB2A1D1922F900FDF5F3 /* UIView+Common.m in Sources */,
+				D74433A91D2B51D700693546 /* HLLBillTableViewCell.m in Sources */,
 				D78DD67A1D2836850060B2E7 /* FSCalendarHeader.m in Sources */,
 				D78015EB1D26124200A0CD13 /* LocationManager.m in Sources */,
 				D78DD66E1D2836850060B2E7 /* CALayer+FSExtension.m in Sources */,
@@ -831,6 +856,7 @@
 				D75BCAF61D18D31E00FDF5F3 /* HLLKeyboardView.m in Sources */,
 				D75BCB0B1D18D8AA00FDF5F3 /* HLLCategoryCollectionView.m in Sources */,
 				D75BCB351D1949DE00FDF5F3 /* HLLKeyboardController.m in Sources */,
+				D74433B21D2B5C9D00693546 /* HLLBillManager.m in Sources */,
 				D78DD6701D2836850060B2E7 /* FSCalendar+Deprecated.m in Sources */,
 				D75BCB381D1989B000FDF5F3 /* HLLKeyboardSplitView.m in Sources */,
 				D78015C51D23A92E00A0CD13 /* HLLToggle.m in Sources */,
