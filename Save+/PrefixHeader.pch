@@ -13,6 +13,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "DefaineManager.h"
 #import "DefaineAnimation.h"
+#import "StoryBoardIdHeader.h"
 
 #import "UIColor+Common.h"
 #import "UIImage+Common.h"

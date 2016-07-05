@@ -30,8 +30,17 @@
     self.cancelButton.layer.masksToBounds = YES;
     [self.cancelButton hll_setBackgroundImageWithColor:[UIColor colorWithHexString:@"555555"] forState:UIControlStateNormal];
     [self.cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
 }
 
+- (void)layoutSubviews{
+
+    [super layoutSubviews];
+    
+    self.commitButton.layer.cornerRadius = self.commitButton.width / 2;
+    self.cancelButton.layer.cornerRadius = self.cancelButton.width / 2;
+
+}
 #pragma mark - Action
 
 - (IBAction)commitButtonDidHandle:(id)sender{

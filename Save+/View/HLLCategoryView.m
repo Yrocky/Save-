@@ -68,11 +68,7 @@
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    if (self.categoryResults && self.categoryResults.count) {
-        
-        return self.categoryResults.count + 1;
-    }
-    return 0;
+    return self.categoryResults.count;
 }
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
@@ -84,16 +80,11 @@
     HLLCategoryCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:[HLLCategoryCollectionViewCell hll_cellIdentifier] forIndexPath:indexPath];
     
     if (self.categoryResults.count > 0) {
-        if (indexPath.item == self.categoryResults.count) {// 最后一个
-            cell.contentView.backgroundColor = [UIColor greenColor];
-        }else{
+        cell.contentView.backgroundColor = [UIColor clearColor];
         
-            cell.contentView.backgroundColor = [UIColor clearColor];
-
-            HLLCategory * category = self.categoryResults[indexPath.item];
-            
-            [cell hll_configureCellWithData:category];
-        }
+        HLLCategory * category = self.categoryResults[indexPath.item];
+        
+        [cell hll_configureCellWithData:category];
     }
 
     return cell;
@@ -102,23 +93,10 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSInteger rows = [collectionView numberOfItemsInSection:indexPath.section];
+    HLLCategory * category = self.categoryResults[indexPath.item];
     
-    if (self.categoryResults.count && rows - 1 > indexPath.item) {
-        
-        HLLCategory * category = self.categoryResults[indexPath.item];
-        
-        NSLog(@"前面的 show");
-        if (self.delegate && [self.delegate respondsToSelector:@selector(categoryView:didSelectedCategoryItem:)]) {
-            [self.delegate categoryView:self didSelectedCategoryItem:category];
-        }
-    }
-    else{
-    
-        NSLog(@"最后一个");
-        if (self.delegate && [self.delegate respondsToSelector:@selector(categoryViewDidSetupCategories)]) {
-            [self.delegate categoryViewDidSetupCategories];
-        }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(categoryView:didSelectedCategoryItem:)]) {
+        [self.delegate categoryView:self didSelectedCategoryItem:category];
     }
 }
 
@@ -161,7 +139,7 @@
 - (void)showAnimaiton{
 
     [UIView animateWithDuration:CommonAnimationDeration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.frame = self.originalFrame;
+//        self.frame = self.originalFrame;
         self.alpha = 1.0f;
     } completion:^(BOOL finished) {
         
@@ -175,7 +153,7 @@
     frame.origin.x -= frame.size.width;
     
     [UIView animateWithDuration:CommonAnimationDeration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.frame = frame;
+//        self.frame = frame;
         self.alpha = 0.0f;
     } completion:^(BOOL finished) {
         
@@ -190,6 +168,6 @@
 
 - (void) clearCategory{
 
-
+    [self.categoryCollectionView reloadData];
 }
 @end

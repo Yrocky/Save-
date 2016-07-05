@@ -14,10 +14,15 @@
 #import "HLLKeyboardController.h"
 #import "HLLNoteView.h"
 #import "HLLCommitView.h"
-
+#import "StoryBoardUtilities.h"
+#import "HLLTouchIDHelper.h"
+#import "HLLSetting.h"
+#import "HLLCategory.h"
+#import "HLLLocationView.h"
 
 @interface ViewController ()<HLLCategoryViewDelegate,HLLKeyboardControllerDelegate,HLLCommitViewDelegate>
 
+// UI
 @property (weak, nonatomic) IBOutlet HLLInputView *inputAmountView;
 
 @property (weak, nonatomic) IBOutlet HLLCategoryView *categoryView;
@@ -31,6 +36,10 @@
 @property (weak, nonatomic) IBOutlet HLLCommitView *commitView;
 
 @property (weak, nonatomic) IBOutlet HLLNoteView *noteView;
+@property (weak, nonatomic) IBOutlet HLLLocationView *locationView;
+
+// data
+@property (nonatomic ,strong) HLLCategory * category;
 @end
 
 @implementation ViewController
@@ -48,16 +57,92 @@
 - (void)viewDidAppear:(BOOL)animated{
 
     [super viewDidAppear:animated];
+//    
+//    RLMResults<HLLCategory *> * categories = [HLLCategory allObjects];
+//
+//    for (HLLCategory * category in categories) {
+//        
+//        NSLog(@"category:%@",category);
+//    }
     
-    RLMResults<HLLCategory *> * categories = [HLLCategory allObjects];
-
-    for (HLLCategory * category in categories) {
+    RLMResults<HLLBill *> * billes = [HLLBill allObjects];
+    
+    for (HLLBill * bill in billes) {
         
-        NSLog(@"category:%@",category);
+        NSLog(@"bill:%@",bill);
+        NSLog(@"bill'time:%@",bill.dateDetailString);
     }
 }
 
+#pragma mark - Method
+
+- (void) saveBill{
+
+    RLMRealm * defaultRealm = [RLMRealm defaultRealm];
+    
+    //        NSLog(@"Path:%@",defaultRealm.configuration.fileURL);
+    
+    [defaultRealm beginWriteTransaction];
+    
+    NSInteger amount = self.inputAmountView.amountNumber;
+    
+    // 使用 NSPredicate 查询
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"categoryIcon = %@ ",self.category.categoryIcon];
+    RLMResults * categoriesResult = [HLLCategory objectsWithPredicate:pred];
+    HLLCategory * category = [categoriesResult firstObject];
+
+    HLLBill * bill = [[HLLBill alloc] init];
+    bill.category = category;
+    bill.amount = [NSNumber numberWithInteger:amount];
+    
+    bill.note = self.noteView.note;
+    bill.date = [NSDate date];
+    
+    [defaultRealm addObject:bill];
+    
+    [defaultRealm commitWriteTransaction];
+    
+    [self.inputAmountView clearInput];
+    [self.noteView clearNote];
+    [self.categoryView clearCategory];
+}
+
+- (void) gotoChartAndSetting{
+    UINavigationController * viewController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Check" storyBoardID:CheckNavigationViewControllerStoryBoardID];
+    
+    [self.navigationController presentViewController:viewController animated:YES completion:nil];
+}
 #pragma mark - Action
+
+- (IBAction)showCheckViewControllerHandle:(UIBarButtonItem *)sender {
+    
+    RLMResults<HLLSetting *> * result = [HLLSetting allObjects];
+    
+    HLLSetting * setting = [result firstObject];
+    
+    if (!setting.verify || (setting.verifyForTouchID == NO && setting.verifyForPassword == NO)) {
+        
+        [self gotoChartAndSetting];
+    }
+    
+    if (setting.verifyForTouchID) {
+        
+        [HLLTouchIDHelper evaluateWithTouchID:^(BOOL success, NSError *error) {
+            
+            if (success) {
+                
+                [self gotoChartAndSetting];
+            }else{
+                
+                NSLog(@"Error:%@",error);
+            }
+        }];
+    }
+    if(setting.verifyForPassword){//
+    
+        [self gotoChartAndSetting];
+    }
+}
 
 - (IBAction)swipeGestureHandle:(UISwipeGestureRecognizer *)sender {
     
@@ -70,6 +155,8 @@
 
     [self.inputAmountView updateCategoryIconWithImageName:category.categoryIcon
                                                 withColor:[UIColor colorWithHexString:category.categoryColor]];
+    
+    self.category = category;
 }
 
 - (void) categoryViewDidSetupCategories{
@@ -93,16 +180,35 @@
 
 - (void) keyboardControllerDidCommitInput:(HLLKeyboardController *)keyboard{
 
-    if (self.inputAmountView.nextCommit) {
+    RLMResults<HLLSetting *> * result = [HLLSetting allObjects];
+    
+    HLLSetting * setting = [result firstObject];
+    
+    if (self.inputAmountView.nextCommit && setting.remarks) {
         
         [self.categoryView hidenAnimation];
         [self.keyboardView hidenAnimation];
         
         [self.commitView showAnimaiton];
         [self.noteView showAnimaiton];
+        
+        if (setting.location) {
+            self.locationView.hidden = NO;
+            [self.locationView loadCurrentLocationInfo];
+            [self.locationView showAnimaiton];
+        }else{
+            self.locationView.hidden = YES;
+            [self.locationView hidenAnimation];
+        }
     }else{
     
-        NSLog(@"啥都不做，后期加特效");
+        NSLog(@"直接记账");
+        if (self.inputAmountView.amountNumber) {
+            
+            [self saveBill];
+        }else{
+            NSLog(@"弹出来一个警告！！");
+        }
     }
 }
 
@@ -110,21 +216,25 @@
 
 - (void) commitViewDidSelectedCommitButton:(HLLCommitView *)commitView{
 
-    [self.noteView hidenAnimation];
-    [self.noteView clearNote];
+    // 记账
+    [self saveBill];
+//    [self addRealmData:nil];
     
+    // UI
+    [self.noteView hidenAnimation];
+    [self.locationView hidenAnimation];
     [self.commitView hidenAnimation];
     
     [self.categoryView showAnimaiton];
     [self.keyboardView showAnimaiton];
     
-    [self.inputAmountView clearInput];
 }
 
 - (void) commitViewDidSelectedCancelButton:(HLLCommitView *)commitView{
     
-    [self.commitView hidenAnimation];
     [self.noteView hidenAnimation];
+    [self.locationView hidenAnimation];
+    [self.commitView hidenAnimation];
     
     [self.categoryView showAnimaiton];
     [self.keyboardView showAnimaiton];
@@ -140,6 +250,7 @@
         self.keyboardController = segue.destinationViewController;
         self.keyboardController.delegate = self;
     }
+    
 }
 
 - (IBAction)addRealmData:(UIButton *)addButton {
@@ -160,10 +271,12 @@
         category.categoryColor = @"#346534";
 //        category.active = YES;
         
+        NSInteger amount = self.inputAmountView.amountNumber;
         HLLBill * bill = [[HLLBill alloc] init];
-        bill.category = category;
-        bill.amount = @123;
-        bill.note = @"3xxxxyyyyzzz";
+        bill.category = self.category;
+        bill.amount = [NSNumber numberWithInteger:amount];
+        
+        bill.note = self.noteView.note;
         bill.date = [NSDate date];
         
         [defaultRealm addObject:bill];

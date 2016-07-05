@@ -34,6 +34,8 @@
         
         [HLLCategoryHelper loadCategory];
         
+        [HLLCategoryHelper loadSetting];
+        
         [userDefault setBool:YES forKey:@"loadCategory"];
         
         [userDefault synchronize];

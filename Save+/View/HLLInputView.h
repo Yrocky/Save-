@@ -13,8 +13,11 @@
 
 @property (nonatomic ,assign ,readonly) BOOL nextCommit;
 
+@property (nonatomic ,assign ,readonly) NSInteger amountNumber;
+
 - (void) updateCategoryIconWithImageName:(NSString *)imageName
                                withColor:(UIColor *)color;
+
 
 - (void) updateAmountWithNumber:(NSInteger)number;
 

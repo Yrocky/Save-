@@ -9,7 +9,7 @@
 #import "HLLNoteView.h"
 #import "UIPlaceHolderTextView.h"
 
-@interface HLLNoteView ()
+@interface HLLNoteView ()<UITextViewDelegate>
 
 @property (nonatomic ,strong) IBOutlet UILabel * titleLabel;
 
@@ -17,6 +17,7 @@
 
 @property (nonatomic ,assign) CGRect originalFrame;
 
+@property (nonatomic ,strong ,readwrite) NSString * note;
 @end
 @implementation HLLNoteView
 
@@ -27,6 +28,7 @@
     
     self.noteTextView.text = @"";
     self.noteTextView.placeholder = @"填写本次记账的用途等等任何想写的东西";
+    self.noteTextView.delegate = self;
 }
 
 #pragma mark - Method
@@ -34,6 +36,18 @@
 - (void) clearNote{
 
     self.noteTextView.text = @"";
+}
+
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+
+    return YES;
+}
+- (void)textViewDidChange:(UITextView *)textView{
+
+    NSLog(@"%@",textView.text);
+    self.note = textView.text;
 }
 
 #pragma mark - HLLNibProtocol

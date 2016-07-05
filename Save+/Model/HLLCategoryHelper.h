@@ -12,4 +12,5 @@
 
 + (void) loadCategory;
 
++ (void) loadSetting;
 @end

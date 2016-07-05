@@ -53,4 +53,12 @@
 #define IOSVersion  [[[UIDevice currentDevice] systemVersion] floatValue]
 
 
+#define  LATO_REGULAR   @"Lato-Regular"
+#define  LATO_BOLD      @"Lato-Bold"
+#define  LATO_HAIRLINE  @"Lato-Hairline"
+#define  LATO_THIN      @"Lato-Thin"
+#define  LATO_LIGHT     @"Lato-Light"
+#define  LATO_THIN_IT   @"Lato-ThinItalic"
+
+
 #endif /* DefaineManager_h */

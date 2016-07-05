@@ -44,7 +44,7 @@
 
 - (BOOL)nextCommit{
 
-    return (self.categoryIconImageView.image != nil) && self.amountNumber;
+    return (self.categoryIconImageView.image != nil) && (self.amountNumber != 0);
 }
 #pragma mark - HLLNibProtocol
 
@@ -120,6 +120,8 @@
     [self.amount deleteCharactersInRange:NSMakeRange(0, self.amount.length)];
     
     self.categoryIconImageView.image = nil;
+    
+    self.backgroundColor = [UIColor colorWithHexString:@"21af73"];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

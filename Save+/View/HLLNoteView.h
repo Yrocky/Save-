@@ -12,6 +12,8 @@
 
 @interface HLLNoteView : UIView<HLLAnimationProtocol,HLLNibProtocol>
 
+@property (nonatomic ,strong ,readonly) NSString * note;
+
 - (void) clearNote;
 
 @end

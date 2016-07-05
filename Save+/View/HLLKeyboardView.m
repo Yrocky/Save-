@@ -15,7 +15,6 @@
 @end
 @implementation HLLKeyboardView
 
-
 - (void)awakeFromNib{
 
     [super awakeFromNib];
@@ -40,7 +39,7 @@
     
     [UIView animateWithDuration:CommonAnimationDeration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.alpha = 1.0f;
-        self.frame = self.originalFrame;
+//        self.frame = self.originalFrame;
     } completion:^(BOOL finished) {
         
     }];
@@ -54,7 +53,7 @@
     
     [UIView animateWithDuration:CommonAnimationDeration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.alpha = 0.0f;
-        self.frame = frame;
+//        self.frame = frame;
     } completion:^(BOOL finished) {
         
     }];

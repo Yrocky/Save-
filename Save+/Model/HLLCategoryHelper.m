@@ -8,6 +8,8 @@
 
 #import "HLLCategoryHelper.h"
 #import "HLLCategory.h"
+#import "HLLSetting.h"
+
 
 @implementation HLLCategoryHelper
 
@@ -39,6 +41,27 @@
     
 
 }
+
++ (void) loadSetting{
+
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(queue, ^{
+        
+        RLMRealm * defaultRealm = [RLMRealm defaultRealm];
+        
+        [defaultRealm beginWriteTransaction];
+        
+        HLLSetting * setting = [[HLLSetting alloc] init];
+        setting.budget = nil;
+        [defaultRealm addObject:setting];
+
+        [defaultRealm commitWriteTransaction];
+        
+    });
+    
+}
+#pragma mark - Private
 
 + (NSArray<NSString *> *) categoryIcon{
 
