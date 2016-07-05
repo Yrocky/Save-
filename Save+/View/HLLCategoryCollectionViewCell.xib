@@ -22,7 +22,8 @@
                 <subviews>
                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhF-Ve-IIT" customClass="HLLCategoryCellContentView">
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category_icon_accommodation" translatesAutoresizingMaskIntoConstraints="NO" id="fPn-hC-vzc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="category_icon_accommodation" translatesAutoresizingMaskIntoConstraints="NO" id="fPn-hC-vzc">
+                                <frame key="frameInset" minX="42" minY="39" width="33" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="FBz-RX-d3K"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="ZAc-b7-nX5"/>
