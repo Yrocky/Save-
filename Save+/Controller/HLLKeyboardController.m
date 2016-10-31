@@ -27,9 +27,9 @@
 
     [super loadView];
     
-    _lineLayer = [CAShapeLayer layer];
-    _lineLayer.lineWidth = 2 / [UIScreen mainScreen].scale;
-    _lineLayer.fillColor = [UIColor clearColor].CGColor;
+    _lineLayer             = [CAShapeLayer layer];
+    _lineLayer.lineWidth   = 2 / [UIScreen mainScreen].scale;
+    _lineLayer.fillColor   = [UIColor clearColor].CGColor;
     _lineLayer.strokeColor = [UIColor colorWithHexString:@"E9ECEF"].CGColor;
     [self.view.layer addSublayer:_lineLayer];
     

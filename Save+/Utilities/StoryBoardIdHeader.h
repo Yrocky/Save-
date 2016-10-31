@@ -16,6 +16,9 @@
 static NSString *const
 CheckNavigationViewControllerStoryBoardID = @"CheckNavigationViewController";
 
+// 地图视图控制器
+static NSString *const
+MapViewControllerStoryBoardID = @"MapViewController";
 
 
 #endif /* StoryBoardIdHeader_h */

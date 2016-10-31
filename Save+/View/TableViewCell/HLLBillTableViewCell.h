@@ -9,7 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "HLLNibCellProtocol.h"
 
+@class HLLBillTableViewCell;
+@protocol HLLBillTableViewCellDelegate <NSObject>
+
+// 删除
+- (void) billTableViewCellDidDeleted:(HLLBillTableViewCell *)cell;
+
+// 编辑
+- (void) billTableViewCellDidEdited:(HLLBillTableViewCell *)cell;
+
+@end
 
 @interface HLLBillTableViewCell : UITableViewCell<HLLNibCellProtocol>
+
+@property (nonatomic ,weak) id<HLLBillTableViewCellDelegate> delegate;
+
+@property (weak, nonatomic) IBOutlet UIView *categoryLineView;
 
 @end

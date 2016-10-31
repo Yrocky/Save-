@@ -26,23 +26,23 @@
 @interface ViewController ()<HLLCategoryViewDelegate,HLLKeyboardControllerDelegate,HLLCommitViewDelegate>
 
 // UI
-@property (weak, nonatomic) IBOutlet HLLInputView *inputAmountView;
+@property (weak, nonatomic  ) IBOutlet HLLInputView             *inputAmountView;
 
-@property (weak, nonatomic) IBOutlet HLLCategoryView *categoryView;
+@property (weak, nonatomic  ) IBOutlet HLLCategoryView          *categoryView;
 
-@property (weak, nonatomic) IBOutlet HLLKeyboardView *keyboardView;
+@property (weak, nonatomic  ) IBOutlet HLLKeyboardView          *keyboardView;
 
-@property (nonatomic ,weak) HLLKeyboardController * keyboardController;
+@property (nonatomic ,weak  ) HLLKeyboardController    * keyboardController;
 
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeGesture;
 
-@property (weak, nonatomic) IBOutlet HLLCommitView *commitView;
+@property (weak, nonatomic  ) IBOutlet HLLCommitView            *commitView;
 
-@property (weak, nonatomic) IBOutlet HLLNoteView *noteView;
-@property (weak, nonatomic) IBOutlet HLLLocationView *locationView;
+@property (weak, nonatomic  ) IBOutlet HLLNoteView              *noteView;
+@property (weak, nonatomic  ) IBOutlet HLLLocationView          *locationView;
 
 // data
-@property (nonatomic ,strong) HLLCategory * category;
+@property (nonatomic ,strong) HLLCategory              * category;
 @end
 
 @implementation ViewController
@@ -51,7 +51,7 @@
     [super viewDidLoad];
     
     self.categoryView.delegate = self;
-    self.commitView.delegate = self;
+    self.commitView.delegate   = self;
     
     [self.view addGestureRecognizer:self.swipeGesture];
 }
@@ -75,6 +75,15 @@
 //        NSLog(@"bill:%@",bill);
         NSLog(@"bill'time:%@",bill.dateDetailString);
     }
+    
+    RLMResults<HLLSetting *> * result = [HLLSetting allObjects];
+    
+    HLLSetting * setting = [result firstObject];
+    
+    if (setting.location){
+        
+        [self.locationView loadCurrentLocationInfo];
+    }
 }
 
 #pragma mark - Method
@@ -95,8 +104,12 @@
     bill.amount = [NSNumber numberWithInteger:amount];
     
     bill.note = self.noteView.note;
-    //    bill.date = [calendar yesterdayOfDate: [NSDate date]];
-    bill.date = [calendar beginingOfMonthOfDate: [NSDate date]];
+    bill.date = [NSDate date];
+//        bill.date = [calendar yesterdayOfDate: [NSDate date]];
+//    bill.date = [calendar beginingOfMonthOfDate: [NSDate date]];
+    bill.longitude = self.locationView.longitude;
+    bill.latitude = self.locationView.latitude;
+    bill.locationInfo = self.locationView.loctionInfo;
     
     HLLBillManager * billManager = [[HLLBillManager alloc] init];
     

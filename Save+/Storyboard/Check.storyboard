@@ -57,15 +57,17 @@
                                     <outlet property="delegate" destination="38A-w7-gK4" id="rfK-C0-fPb"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-50-rrk">
-                                <color key="backgroundColor" red="0.51764705879999995" green="0.58039215690000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="cGs-0K-rOv">
-                                    <frame key="frameInset" width="375" height="200"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.52549019610000003" green="0.67450980390000004" blue="0.95686274510000002" alpha="1" colorSpace="deviceRGB"/>
-                                </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-50-rrk">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="DcX-Jz-Daw" customClass="HLLChartView">
+                                    <frame key="frameInset" height="300" maxY="33"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <connections>
+                                        <segue destination="PIl-Mq-x9R" kind="embed" identifier="chartIdentifier" id="l6C-nH-jg4"/>
+                                    </connections>
+                                </containerView>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="KZ2-7o-ptG">
-                                    <frame key="frameInset" minY="200" width="375" height="80"/>
+                                    <frame key="frameInset" minY="300" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当天没有记账" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IL1-fE-RC1">
@@ -114,6 +116,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jYe-Jx-1H2">
+                        <barButtonItem key="leftBarButtonItem" image="advance_filled" id="2bB-GG-i2d">
+                            <color key="tintColor" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonHandle:" destination="38A-w7-gK4" id="Sbn-1J-VoT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="sorting_options.png" style="plain" id="W4W-iE-aax">
                             <color key="tintColor" red="0.12941176469999999" green="0.68627450980000004" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -126,7 +134,7 @@
                         <outlet property="calendarView" destination="N3r-Ox-9Nm" id="mCj-08-9SG"/>
                         <outlet property="calendarViewHeightConstraint" destination="inf-vs-Kxz" id="79B-4Y-bP5"/>
                         <outlet property="tableFooterView" destination="KZ2-7o-ptG" id="R0w-bW-neE"/>
-                        <outlet property="tableHeaderView" destination="cGs-0K-rOv" id="Wtd-Bh-dS6"/>
+                        <outlet property="tableHeaderView" destination="DcX-Jz-Daw" id="Xs0-Zk-Ooc"/>
                         <segue destination="Wbe-2S-vjY" kind="show" identifier="settingViewControllerIdentifier" id="1hN-Zb-MI6"/>
                     </connections>
                 </viewController>
@@ -147,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="uXm-xN-ZYM">
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -160,18 +168,37 @@
                     </view>
                     <connections>
                         <outlet property="settingTableView" destination="uXm-xN-ZYM" id="4cI-0c-GpN"/>
+                        <segue destination="FQl-Hh-pvo" kind="show" identifier="sortCategoryViewControllerIdentifier" id="bFv-ZZ-BTF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIC-SH-Nlj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1794" y="365"/>
+            <point key="canvasLocation" x="1868" y="365"/>
+        </scene>
+        <!--Sort Category View Controller-->
+        <scene sceneID="NiF-CC-fUg">
+            <objects>
+                <viewController id="FQl-Hh-pvo" customClass="HLLSortCategoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hJx-71-7xx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Epr-dt-6wb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eMH-Wn-RoL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BX4-3B-vNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="365"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bvl-4Y-NiI">
             <objects>
                 <navigationController storyboardIdentifier="CheckNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NFu-9e-uBG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I3N-kO-uVJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I3N-kO-uVJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -184,8 +211,27 @@
             </objects>
             <point key="canvasLocation" x="265" y="365"/>
         </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="exT-1a-ub1">
+            <objects>
+                <viewController id="PIl-Mq-x9R" customClass="HLLChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y5v-Oz-wAY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uld-0z-1a7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ll-SE-Yps">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DX5-en-eTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="926"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="advance_filled" width="37" height="37"/>
         <image name="sorting_options.png" width="30" height="30"/>
     </resources>
 </document>

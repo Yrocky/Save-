@@ -7,10 +7,29 @@
 //
 
 #import "HLLBillManager.h"
+#import <objc/runtime.h>
+
 
 @implementation HLLBillManager
 
 #pragma mark - API
+
+/**
+ *  所有的记账数据
+ */
+- (NSArray<HLLBill *> *) allBills{
+
+    RLMResults<HLLBill *> * billes = [HLLBill allObjects];
+
+    NSMutableArray * tempBills = [NSMutableArray array];
+    
+    for (HLLBill * bill in billes) {
+    
+        [tempBills addObject:bill];
+    }
+    return tempBills;
+}
+
 /**
  *  查询某一天的记账信息，日期，总账数目
  */
@@ -29,7 +48,6 @@
         amountCount += bill.amount.integerValue;
     }
     
-//    NSString * countString = [NSString stringWithFormat:@"",(unsigned long)billes.count];
     NSString * amountCountString = [NSString stringWithFormat:@"共花费%ld元",(long)amountCount];
     
     return @{@"date":dateString,
@@ -55,6 +73,28 @@
     }
     
     return tempBills;
+}
+
+/**
+ *  查询某一天的所有的记账数据，根据同分类进行归类
+ */
+- (NSArray<NSDictionary *> *) queryBillsDataAtDate:(NSDate *)date{
+
+    // 使用 NSPredicate 查询
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"dateString = %@ ",[self dateFromatterStringWithDate:date format:@"YYYY MM dd"]];
+    RLMResults<HLLBill *> * billes = [HLLBill objectsWithPredicate:pred];
+    
+    NSMutableArray * tempBillsData = [NSMutableArray array];
+    
+    for (HLLBill * bill in billes) {
+        
+        [tempBillsData addObject:bill];
+    }
+
+    NSArray * archive = [self archiveObjectFromOriginalArray:tempBillsData withProperty:@"category.categoryName"];
+    
+    
+    return nil;
 }
 
 /**
@@ -143,4 +183,68 @@
     
     return [formatter stringFromDate:date];
 }
+
+- (NSArray *) archiveObjectFromOriginalArray:(NSArray *)originalArray withProperty:(id)property{
+    
+    // Program
+    NSMutableArray * resultMutableArray = [@[] mutableCopy];
+    
+    NSMutableArray * originalMutableArray = [NSMutableArray arrayWithArray:originalArray];
+    
+    for (int i = 0; i < originalMutableArray.count; i ++) {
+        
+        id one = originalMutableArray[i];
+        
+//        if (![self someClass:one hasProperty:property]) {
+//            
+//            return ;
+//        }
+        NSMutableArray * tempArray = [@[] mutableCopy];
+        
+        [tempArray addObject:one];
+        
+        for (int j = i+1; j < originalMutableArray.count; j ++) {
+            
+            id other = originalMutableArray[j];
+            
+            if ([[one valueForKeyPath:property] isEqual:[other valueForKeyPath:property]]) {
+                
+                [tempArray addObject:other];
+                [originalMutableArray removeObject:other];
+                
+            }
+        }
+        [resultMutableArray addObject:tempArray];
+    }
+    NSLog(@"originalMutableArray:%@",originalMutableArray);
+    NSLog(@"resultMutableArray:%@",resultMutableArray);
+    
+    return resultMutableArray;
+}
+
+- (BOOL) someClass:(id)class hasProperty:(NSString *)propertyName{
+    
+    bool has = NO;
+    unsigned int outCount;
+    objc_property_t * propertys = class_copyPropertyList(class, &outCount);
+    
+    for (int index = 0; index < outCount; index ++) {
+        objc_property_t property = propertys[index];
+        
+        NSString * propertyKey = [NSString stringWithUTF8String:property_getName(property)];
+        if ([propertyName isEqualToString:propertyKey]) {
+            
+            has = YES;
+            
+            free(propertys);
+            
+            return has;
+        }
+    }
+    free(propertys);
+    
+    return has;
+}
+
+
 @end

@@ -20,6 +20,9 @@
 
 @property (nonatomic ,strong) IBOutlet UILabel * locationInfoLabel;
 
+@property (nonatomic ,strong ,readwrite) NSString * loctionInfo;
+@property (nonatomic ,assign ,readwrite) CGFloat longitude;
+@property (nonatomic ,assign ,readwrite) CGFloat latitude;
 @end
 @implementation HLLLocationView
 
@@ -93,6 +96,9 @@
         // 停止定位
         [gps stopGPSLocation];
         
+        self.longitude = longitude;
+        self.latitude = latitude;
+        
         // 定位成功
         self.locationInfoLabel.text = @"定位成功，解析位置信息....";
         
@@ -105,6 +111,8 @@
 //            NSLog(@"当前地理位置信息: %@", gpsInfo);
             
             self.locationInfoLabel.text = gpsInfo.name;
+            
+            self.loctionInfo = gpsInfo.name;
         }];
     };
 }

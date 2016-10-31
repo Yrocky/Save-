@@ -4,7 +4,9 @@
 # use_frameworks!
 
 target 'Save+' do
+
 pod 'Realm', '~> 1.0.0'
+pod 'PNChart', '~> 0.8.9'
 
 end
 

@@ -11,6 +11,8 @@
 #import "NSString+Size.h"
 #import "HLLSetting.h"
 
+#import "StoryBoardUtilities.h"
+
 
 @interface HLLSettingViewController ()<UITableViewDelegate>
 
@@ -27,10 +29,10 @@
 
     [self setupSettingUI];
     
-    _dataSource = [[HLLSettingDataSource alloc] init];
+    self.dataSource                       = [[HLLSettingDataSource alloc] init];
     [self.dataSource configureTableView:self.settingTableView];
-    self.settingTableView.dataSource = self.dataSource;
-    self.settingTableView.delegate = self;
+    self.settingTableView.dataSource      = self.dataSource;
+    self.settingTableView.delegate        = self;
     self.settingTableView.tableHeaderView = [self tableViewHeaderView];
         
 }
@@ -62,22 +64,25 @@
 
 - (UIView *) tableViewHeaderView{
     
-    UIView * headerView = [UIView new];
-    headerView.backgroundColor = [UIColor randomColor];
-    headerView.frame = CGRectMake(0, 0, self.view.width, 0.1f);
+    UIView * headerView        = [UIView new];
+    headerView.backgroundColor = [UIColor clearColor];
+    headerView.frame           = CGRectMake(0, 0, self.view.width, 0.1f);
     return headerView;
 }
 #pragma mark - UITableViewDelegate
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    
     if (indexPath.section == 0 && indexPath.row == 3) {
         NSLog(@"修改分类");
+        [self performSegueWithIdentifier:@"sortCategoryViewControllerIdentifier" sender:nil];
     }
     
     if (indexPath.section == 2 && indexPath.row == 0) {
         NSLog(@"备份数据至iCloud");
+        
+        UIViewController * viewController = (UIViewController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Statistics" storyBoardID:MapViewControllerStoryBoardID];
+        [self.navigationController pushViewController:viewController animated:YES];
     }
     
     if (indexPath.section == 3 && indexPath.row == 0) {
@@ -91,20 +96,20 @@
 - (UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
 
     if (section == 1) {
-        CGFloat height = [self tableView:tableView heightForFooterInSection:section];
-        UIView * sectionFooterView = [[UIView alloc] init];
-        sectionFooterView.frame = CGRectMake(0, 0, tableView.width, height);
+        CGFloat height                    = [self tableView:tableView heightForFooterInSection:section];
+        UIView * sectionFooterView        = [[UIView alloc] init];
+        sectionFooterView.frame           = CGRectMake(0, 0, tableView.width, height);
         sectionFooterView.backgroundColor = [UIColor clearColor];
         
         NSString * text = @"为账单添加安全设置，当数字验证以及Touch ID共同设置的时候以Touch ID为主（如果您的设备支持Touch ID）";
-        CGFloat width = sectionFooterView.width - 40.0f;
-        CGFloat textHeight = [text heightWithFontSize:13 forViewWidth:width];
-        UILabel * label = [[UILabel alloc] init];
-        label.frame = CGRectMake(20, 10, width, textHeight);
-        label.text = text;
+        CGFloat width       = sectionFooterView.width - 40.0f;
+        CGFloat textHeight  = [text heightWithFontSize:13 forViewWidth:width];
+        UILabel * label     = [[UILabel alloc] init];
+        label.frame         = CGRectMake(20, 10, width, textHeight);
+        label.text          = text;
         label.numberOfLines = 0;
-        label.font = [UIFont fontWithName:LATO_LIGHT size:13];
-        label.textColor = [UIColor colorWithHexString:@"#999999"];
+        label.font          = [UIFont fontWithName:LATO_LIGHT size:13];
+        label.textColor     = [UIColor colorWithHexString:@"#999999"];
         [sectionFooterView addSubview:label];
         
         return sectionFooterView;

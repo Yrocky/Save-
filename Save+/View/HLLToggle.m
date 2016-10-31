@@ -16,7 +16,7 @@
     if (self) {
         
         self.onTintColor = [UIColor colorWithHexString:@"21AF73"];
-        self.tintColor = [UIColor colorWithHexString:@"F2F2F2"];
+        self.tintColor   = [UIColor colorWithHexString:@"F2F2F2"];
         
     }
     return self;

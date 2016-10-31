@@ -13,14 +13,16 @@
 #import "HLLBillTableViewCell.h"
 #import "HLLBillSectionHeaderView.h"
 #import "HLLBillManager.h"
+#import "HLLChartView.h"
+#import "HLLChartViewController.h"
 
-@interface HLLCheckViewController ()<FSCalendarDataSource,FSCalendarDelegate,FSCalendarDelegateAppearance,UITableViewDataSource,UITableViewDelegate>
+@interface HLLCheckViewController ()<FSCalendarDataSource,FSCalendarDelegate,FSCalendarDelegateAppearance,UITableViewDataSource,UITableViewDelegate,HLLBillTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet FSCalendar *calendarView;
 @property (weak, nonatomic) IBOutlet UITableView *billTableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarViewHeightConstraint;
 
-@property (nonatomic ,strong) IBOutlet UIView * tableHeaderView;
+@property (nonatomic ,strong) IBOutlet HLLChartView * tableHeaderView;
 
 @property (nonatomic ,strong) IBOutlet UIView * tableFooterView;
 
@@ -28,6 +30,10 @@
 
 @property (nonatomic ,strong) NSMutableArray * bills;
 @property (nonatomic ,strong) NSDictionary * sectionData;
+
+@property (nonatomic ,strong) NSDate * selectedDate;
+
+@property (nonatomic ,weak) HLLChartViewController * chartViewController;
 @end
 
 @implementation HLLCheckViewController
@@ -35,36 +41,46 @@
 - (void)loadView{
 
     [super loadView];
-    NSString * headerTitle = [self.calendarView stringFromDate:[NSDate date]
-                                                        format:@"M月 yyyy"];
-    self.title = headerTitle;
     
+    [self.navigationItem setTitle:@"每日记账"];
     
-    self.calendarView.scrollDirection = FSCalendarScrollDirectionVertical; // important
-    self.calendarView.backgroundColor = [UIColor whiteColor];
-    self.calendarView.showsScopeHandle = YES;
-    self.calendarView.scope = FSCalendarScopeMonth;
+    self.calendarView.scrollDirection        = FSCalendarScrollDirectionVertical;// important
+    self.calendarView.backgroundColor        = [UIColor whiteColor];
+    self.calendarView.showsScopeHandle       = YES;
+    self.calendarView.scope                  = FSCalendarScopeMonth;
     self.calendarView.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase|FSCalendarCaseOptionsWeekdayUsesSingleUpperCase;
-    self.calendarView.appearance.titleFont = [UIFont fontWithName:LATO_LIGHT size:15];
+    self.calendarView.appearance.titleFont   = [UIFont fontWithName:LATO_LIGHT size:15];
     self.calendarView.appearance.weekdayFont = [UIFont fontWithName:LATO_BOLD size:15];
-    
+
     [self.billTableView registerNib:[HLLBillTableViewCell hll_nib]
              forCellReuseIdentifier:[HLLBillTableViewCell hll_cellIdentifier]];
-    self.billTableView.backgroundColor = [UIColor whiteColor];
-    self.billTableView.backgroundView = nil;
-    
-    self.tableFooterView.backgroundColor = [UIColor clearColor];
-    
-    self.billManager = [[HLLBillManager alloc] init];
-    
-    self.bills = [NSMutableArray array];
+    self.billTableView.backgroundColor       = [UIColor whiteColor];
+    self.billTableView.backgroundView        = nil;
+
+    self.tableFooterView.backgroundColor     = [UIColor clearColor];
+
+    self.billManager                         = [[HLLBillManager alloc] init];
+
+    self.bills                               = [NSMutableArray array];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self calendar:self.calendarView didSelectDate:[NSDate date]];
+    
 }
 
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"chartIdentifier"])
+    {
+        self.chartViewController = segue.destinationViewController;
+    }
+    
+}
 #pragma mark - Action
 
 - (IBAction)settingButtonHandle:(UIBarButtonItem *)sender {
@@ -72,6 +88,10 @@
     [self performSegueWithIdentifier:@"settingViewControllerIdentifier" sender:nil];
 }
 
+- (IBAction) backButtonHandle:(UIBarButtonItem *)sender{
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
 #pragma mark - FSCalendarDataSource
 
 /**
@@ -101,24 +121,27 @@
 
 - (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date{
 
-    if ([calendar isDateInToday:date]) {
-        
-//        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-    }
+    self.selectedDate = date;
+    
     [self.bills removeAllObjects];
-    NSArray * bills = [self.billManager queryBillsAtDate:date];
+    NSArray * bills                    = [self.billManager queryBillsAtDate:date];
     if (bills.count > 0) {
         
         [self.bills addObjectsFromArray:[self.billManager queryBillsAtDate:date]];
         self.billTableView.tableFooterView = nil;
+        self.billTableView.tableHeaderView = self.tableHeaderView;
     }else{
         self.billTableView.tableFooterView = self.tableFooterView;
+        self.billTableView.tableHeaderView = nil;
     }
-    self.sectionData = [self.billManager queryBillDataAtDate:date];
+    self.sectionData                   = [self.billManager queryBillDataAtDate:date];
     
-    [self.billTableView reloadData];
+    [self.billTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     
-    NSLog(@"%@",[self.billManager queryBillsAtDate:date]);
+    [self.chartViewController reloadChartDataAtDate:date];
+    
+    NSLog(@"%@",[self.billManager queryBillsDataAtDate:date]);
+    
 }
 
 - (void)calendar:(FSCalendar *)calendar boundingRectWillChange:(CGRect)bounds animated:(BOOL)animated
@@ -129,16 +152,13 @@
 
 - (void)calendarCurrentPageDidChange:(FSCalendar *)calendar{
 
-    NSString * headerTitle = [calendar stringFromDate:calendar.currentPage format:@"M月 yyyy"];
+//    NSString * headerTitle = [calendar stringFromDate:calendar.currentPage format:@"M月 yyyy"];
   
-    self.title = headerTitle;
+//    self.title = headerTitle;
 }
 
 #pragma mark - FSCalendarDelegateAppearance
 
-/**
- * Asks the delegate for multiple event colors for the specific date.
- */
 - (nullable NSArray *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance eventColorsForDate:(NSDate *)date{
 
     return [self.billManager eventColorsForDate:date];
@@ -155,9 +175,13 @@
 
     HLLBillTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:[HLLBillTableViewCell hll_cellIdentifier] forIndexPath:indexPath];
     
+    cell.delegate = self;
+    
     HLLBill * bill = [self.bills objectAtIndex:indexPath.row];
     
     [cell hll_configureCellWithData:bill];
+    
+    cell.categoryLineView.hidden = (indexPath.row + 1 == [tableView numberOfRowsInSection:indexPath.section]);
     
     return cell;
 }
@@ -175,7 +199,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    return 100.0f;
+    return 70.0f;
 }
 - (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
 
@@ -185,6 +209,33 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
  
     return 50.0f;
+}
+
+#pragma mark - HLLBillTableViewCellDelegate
+
+// 删除
+- (void) billTableViewCellDidDeleted:(HLLBillTableViewCell *)cell{
+
+    NSIndexPath * indexPath = [self.billTableView indexPathForCell:cell];
+    
+    HLLBill * bill = self.bills[indexPath.row];
+    
+    [self.billManager deleteBill:bill];
+    
+    [self.bills removeObject:bill];
+    
+    [self calendar:self.calendarView didSelectDate:self.selectedDate];
+    
+    [self.calendarView reloadData];
+}
+
+// 编辑
+- (void) billTableViewCellDidEdited:(HLLBillTableViewCell *)cell{
+
+    NSIndexPath * indexPath = [self.billTableView indexPathForCell:cell];
+    
+    HLLBill * bill = self.bills[indexPath.row];
+
 }
 
 /*

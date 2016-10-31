@@ -12,6 +12,12 @@
 
 @interface HLLLocationView : UIView<HLLNibProtocol,HLLAnimationProtocol>
 
+@property (nonatomic ,strong ,readonly) NSString * loctionInfo;
+
+@property (nonatomic ,assign ,readonly) CGFloat longitude;
+
+@property (nonatomic ,assign ,readonly) CGFloat latitude;
+
 // 获取用户的当前位置信息
 - (void) loadCurrentLocationInfo;
 

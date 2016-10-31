@@ -36,6 +36,7 @@
 - (void) clearNote{
 
     self.noteTextView.text = @"";
+    self.note = @"";
 }
 
 #pragma mark - UITextViewDelegate

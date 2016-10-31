@@ -43,6 +43,7 @@
     
     NSInteger count = [[data objectForKey:@"count"] integerValue];
     self.amountCountLabel.hidden = !count;
+    self.topLineView.hidden = !count;
     self.amountCountLabel.text = [NSString stringWithFormat:@"记账%lu笔    %@",count,[data objectForKey:@"amount"]];
 }
 

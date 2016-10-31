@@ -12,6 +12,11 @@
 @interface HLLBillManager : NSObject
 
 /**
+ *  所有的记账数据
+ */
+- (NSArray<HLLBill *> *) allBills;
+
+/**
  *  查询某一天的记账信息，日期，总账数目
  */
 - (id) queryBillDataAtDate:(NSDate *)date;
@@ -20,6 +25,11 @@
  *  查询某一天的所有的记账数据
  */
 - (NSArray<HLLBill *> *) queryBillsAtDate:(NSDate *)date;
+
+/**
+ *  查询某一天的所有的记账数据，根据同分类进行归类
+ */
+- (NSArray<NSDictionary *> *) queryBillsDataAtDate:(NSDate *)date;
 
 /**
  *  添加一个记账信息

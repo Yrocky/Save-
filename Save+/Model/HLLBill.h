@@ -56,6 +56,10 @@
  */
 @property double latitude;
 
+/**
+ *  记账地址的详细文字信息
+ */
+@property NSString      * locationInfo;
 @end
 
 // This protocol enables typed collections. i.e.:

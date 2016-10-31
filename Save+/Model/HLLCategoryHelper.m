@@ -138,39 +138,5 @@
     return @[];
 }
 
-/*
- @[@"category_icon_accommodation.png",
- @"category_icon_bills.png",
- @"category_icon_business.png",
- @"category_icon_car.png",
- @"category_icon_cinema.png",
- @"category_icon_clothing.png",
- @"category_icon_drink.png",
- @"category_icon_education.png",
- @"category_icon_entertainment.png",
- @"category_icon_expense_gifts.png",
- @"category_icon_expense_other.png",
- @"category_icon_family.png",
- @"category_icon_food.png",
- @"category_icon_gifts.png",
- @"category_icon_groceries.png",
- @"category_icon_healthcare.png",
- @"category_icon_hobbies.png",
- @"category_icon_home.png",
- @"category_icon_income_extra.png",
- @"category_icon_income_other.png",
- @"category_icon_itunes.png",
- @"category_icon_kids.png",
- @"category_icon_loan.png",
- @"category_icon_love.png",
- @"category_icon_pets.png",
- @"category_icon_rent.png",
- @"category_icon_salary.png",
- @"category_icon_savings.png",
- @"category_icon_shopping.png",
- @"category_icon_transport.png",
- @"category_icon_travel.png",
- @"category_icon_utilities.png"]
-*/
 @end
 
