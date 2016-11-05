@@ -121,7 +121,7 @@
     
     self.categoryIconImageView.image = nil;
     
-    self.backgroundColor = [UIColor colorWithHexString:@"21af73"];
+    self.backgroundColor = kTheme_Color;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

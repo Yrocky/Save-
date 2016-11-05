@@ -14,6 +14,8 @@
 #import "DefaineManager.h"
 #import "DefaineAnimation.h"
 #import "StoryBoardIdHeader.h"
+#import "NoticationName.h"
+#import "AppDelegate.h"
 
 #import "UIColor+Common.h"
 #import "UIImage+Common.h"

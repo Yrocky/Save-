@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         
-        self.onTintColor = [UIColor colorWithHexString:@"21AF73"];
+        self.onTintColor = kTheme_Color;
         self.tintColor   = [UIColor colorWithHexString:@"F2F2F2"];
         
     }

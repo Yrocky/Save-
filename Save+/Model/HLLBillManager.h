@@ -11,6 +11,8 @@
 
 @interface HLLBillManager : NSObject
 
++ (instancetype)sharedManager;
+
 /**
  *  所有的记账数据
  */
@@ -27,6 +29,11 @@
 - (NSArray<HLLBill *> *) queryBillsAtDate:(NSDate *)date;
 
 /**
+ *  查询某一天的所有的记账数据，用于表格的使用
+ */
+- (NSArray<NSDictionary *> *) queryChatDataAtDate:(NSDate *)date;
+
+/**
  *  查询某一天的所有的记账数据，根据同分类进行归类
  */
 - (NSArray<NSDictionary *> *) queryBillsDataAtDate:(NSDate *)date;
@@ -39,7 +46,7 @@
 /**
  *  更新一个已有的记账信息
  */
-- (void) updateBill:(HLLBill *)bill;
+- (void) updateBill:(HLLBill *)bill action:(void (^)())action;
 
 /**
  *  删除一个记账信息

@@ -93,22 +93,19 @@
                                     <constraint firstItem="cwi-Jv-mCi" firstAttribute="centerX" secondItem="zcC-N3-eDT" secondAttribute="centerX" id="d8W-2l-6pC"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utT-uo-l58">
-                                <frame key="frameInset" minX="313.5" minY="25" width="38.5" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utT-uo-l58">
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-v1-rl3">
-                                <frame key="frameInset" minX="70" minY="34" width="32" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-v1-rl3">
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e88-Cq-7q6">
-                                <frame key="frameInset" minX="70" minY="10" width="37.5" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e88-Cq-7q6">
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -131,11 +128,11 @@
                             <constraint firstItem="utT-uo-l58" firstAttribute="centerY" secondItem="jKe-cV-kZn" secondAttribute="centerY" id="T8k-9L-PYs"/>
                             <constraint firstItem="zcC-N3-eDT" firstAttribute="centerY" secondItem="jKe-cV-kZn" secondAttribute="centerY" id="VUJ-q8-Ho9"/>
                             <constraint firstItem="zcC-N3-eDT" firstAttribute="leading" secondItem="jKe-cV-kZn" secondAttribute="leading" constant="10" id="bun-YO-wXy"/>
-                            <constraint firstItem="3xw-v1-rl3" firstAttribute="top" secondItem="e88-Cq-7q6" secondAttribute="bottom" constant="5" id="ksL-yG-vPe"/>
+                            <constraint firstItem="3xw-v1-rl3" firstAttribute="top" secondItem="e88-Cq-7q6" secondAttribute="bottom" constant="3" id="ksL-yG-vPe"/>
                             <constraint firstItem="0xI-JV-6e1" firstAttribute="leading" secondItem="utT-uo-l58" secondAttribute="trailing" constant="20" id="pLD-jK-kCL"/>
                             <constraint firstItem="e88-Cq-7q6" firstAttribute="leading" secondItem="zcC-N3-eDT" secondAttribute="trailing" constant="10" id="qBu-lz-1B2"/>
                             <constraint firstItem="0xI-JV-6e1" firstAttribute="top" secondItem="jKe-cV-kZn" secondAttribute="top" id="tH6-qi-kV8"/>
-                            <constraint firstAttribute="bottom" secondItem="3xw-v1-rl3" secondAttribute="bottom" constant="5" id="u1y-D3-mmg"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3xw-v1-rl3" secondAttribute="bottom" constant="1" id="u1y-D3-mmg"/>
                             <constraint firstItem="0xI-JV-6e1" firstAttribute="width" secondItem="jKe-cV-kZn" secondAttribute="width" id="w3j-mO-N4x"/>
                         </constraints>
                         <variation key="default">

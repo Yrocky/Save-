@@ -12,6 +12,15 @@
 
 @implementation HLLBillManager
 
++ (instancetype)sharedManager {
+    
+    static HLLBillManager *shared_manager = nil;
+    static dispatch_once_t pred;
+    dispatch_once(&pred, ^{
+        shared_manager = [[self alloc] init];
+    });
+    return shared_manager;
+}
 #pragma mark - API
 
 /**
@@ -56,9 +65,9 @@
 }
 
 /**
- *  查询某一天的所有的记账数据
+ *  查询某一天的所有的记账数据，用于表格的使用
  */
-- (NSArray<HLLBill *> *) queryBillsAtDate:(NSDate *)date{
+- (NSArray<NSDictionary *> *) queryChatDataAtDate:(NSDate *)date{
 
     // 使用 NSPredicate 查询
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"dateString = %@ ",[self dateFromatterStringWithDate:date format:@"YYYY MM dd"]];
@@ -68,33 +77,49 @@
     
     for (HLLBill * bill in billes) {
         
-        NSLog(@"bill:%@",bill);
+        NSDictionary * billDic = @{@"value":bill.amount,
+                                   @"color":[UIColor colorWithHexString:bill.category.categoryColor],
+                                   @"description":bill.category.categoryName};
+        NSLog(@"bill:%@",billDic);
+        [tempBills addObject:billDic];
+    }
+    
+    return tempBills;
+}
+/**
+ *  查询某一天的所有的记账数据，用于tableView的使用
+ */
+- (NSArray<HLLBill *> *) queryBillsAtDate:(NSDate *)date{
+    
+    // 使用 NSPredicate 查询
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"dateString = %@ ",[self dateFromatterStringWithDate:date format:@"YYYY MM dd"]];
+    RLMResults<HLLBill *> * billes = [HLLBill objectsWithPredicate:pred];
+    
+    NSMutableArray * tempBills = [NSMutableArray array];
+    
+    for (HLLBill * bill in billes) {
+        
         [tempBills addObject:bill];
     }
     
     return tempBills;
 }
-
 /**
  *  查询某一天的所有的记账数据，根据同分类进行归类
  */
 - (NSArray<NSDictionary *> *) queryBillsDataAtDate:(NSDate *)date{
 
-    // 使用 NSPredicate 查询
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"dateString = %@ ",[self dateFromatterStringWithDate:date format:@"YYYY MM dd"]];
-    RLMResults<HLLBill *> * billes = [HLLBill objectsWithPredicate:pred];
+    NSArray * bills = [self queryChatDataAtDate:date];
     
-    NSMutableArray * tempBillsData = [NSMutableArray array];
-    
-    for (HLLBill * bill in billes) {
-        
-        [tempBillsData addObject:bill];
-    }
-
-    NSArray * archive = [self archiveObjectFromOriginalArray:tempBillsData withProperty:@"category.categoryName"];
+    //  @{@"value":bill.amount,
+    //    @"color":[UIColor
+    //    @"description":bill.category.categoryName};
+    NSArray * archive = [self archiveObjectFromOriginalArray:bills
+                                                 withBaseKey:@"description"
+                                                  archiveKey:@"value"];
     
     
-    return nil;
+    return archive;
 }
 
 /**
@@ -114,12 +139,15 @@
 /**
  *  更新一个已有的记账信息
  */
-- (void) updateBill:(HLLBill *)bill{
+- (void) updateBill:(HLLBill *)bill action:(void (^)())action{
 
     RLMRealm * defaultRealm = [RLMRealm defaultRealm];
     
     [defaultRealm beginWriteTransaction];
     
+    if (action) {
+        action();
+    }
     [HLLBill createOrUpdateInRealm:defaultRealm withValue:bill];
 
     [defaultRealm commitWriteTransaction];
@@ -184,44 +212,33 @@
     return [formatter stringFromDate:date];
 }
 
-- (NSArray *) archiveObjectFromOriginalArray:(NSArray *)originalArray withProperty:(id)property{
+/** 根据传入的`key`进行归档具有相同属性的数据 */
+- (NSArray *) archiveObjectFromOriginalArray:(NSArray *)originalArray withBaseKey:(NSString *)baseKey archiveKey:(NSString *)archiveKey{
     
-    // Program
-    NSMutableArray * resultMutableArray = [@[] mutableCopy];
+    NSMutableDictionary * result = [NSMutableDictionary dictionary];
     
-    NSMutableArray * originalMutableArray = [NSMutableArray arrayWithArray:originalArray];
+    for (NSDictionary * billData in originalArray) {
     
-    for (int i = 0; i < originalMutableArray.count; i ++) {
+        NSString * category = billData[baseKey];
         
-        id one = originalMutableArray[i];
-        
-//        if (![self someClass:one hasProperty:property]) {
-//            
-//            return ;
-//        }
-        NSMutableArray * tempArray = [@[] mutableCopy];
-        
-        [tempArray addObject:one];
-        
-        for (int j = i+1; j < originalMutableArray.count; j ++) {
+        if ([result.allKeys containsObject:category]) {
             
-            id other = originalMutableArray[j];
+            NSMutableDictionary * tempBillData = result[category];
             
-            if ([[one valueForKeyPath:property] isEqual:[other valueForKeyPath:property]]) {
-                
-                [tempArray addObject:other];
-                [originalMutableArray removeObject:other];
-                
-            }
+            NSInteger value = [tempBillData[archiveKey] integerValue] + [billData[archiveKey] integerValue];
+            [tempBillData setValue:@(value) forKey:archiveKey];
+            
+        }else{
+        
+            NSMutableDictionary * tempBillData = [NSMutableDictionary dictionaryWithDictionary:billData];
+            [result setValue:tempBillData forKey:category];
         }
-        [resultMutableArray addObject:tempArray];
     }
-    NSLog(@"originalMutableArray:%@",originalMutableArray);
-    NSLog(@"resultMutableArray:%@",resultMutableArray);
     
-    return resultMutableArray;
+    return [result allValues];
 }
 
+/** 判断某个`类`是否具有某一个`属性` */
 - (BOOL) someClass:(id)class hasProperty:(NSString *)propertyName{
     
     bool has = NO;

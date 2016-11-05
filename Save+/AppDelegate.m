@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HLLCategoryHelper.h"
-
+#import "HLLSortCategoryViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,49 +19,63 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [self loadCategory];
+    self.window = [[UIWindow alloc] init];
+    [self.window makeKeyAndVisible];
+    
+    NSDictionary * att = @{NSForegroundColorAttributeName: kTheme_Color,
+                           NSFontAttributeName:[UIFont fontWithName:LATO_BOLD size:18]};
+    [[UINavigationBar appearance] setTitleTextAttributes:att];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithHexString:@"84949E"]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
+//    [self setupRootViewControllerWithDefaultCategoryConfigure];
+
+    [self loadDefault];
     
     return YES;
 }
 
-- (void) loadCategory{
++ (AppDelegate *)appDelegate{
+    
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
+- (void) loadDefault{
     
     NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
     
-    BOOL load = [[userDefault valueForKey:@"loadCategory"] boolValue];
+    BOOL load = [[userDefault valueForKey:@"loadDefaultCategory"] boolValue];
     
     if (!load) {
         
-        [HLLCategoryHelper loadCategory];
+        [[HLLCategoryHelper shareCategoryHelper] loadDefault];
         
-        [HLLCategoryHelper loadSetting];
+        [self setupRootViewControllerWithDefaultCategoryConfigure];
         
-        [userDefault setBool:YES forKey:@"loadCategory"];
+        [userDefault setBool:YES forKey:@"loadDefaultCategory"];
         
         [userDefault synchronize];
-    }
+    }else{
     
-}
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        [self setupRootViewControllerWithCheckViewController];
+    }
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void) setupRootViewControllerWithDefaultCategoryConfigure{
+    
+    HLLSortCategoryViewController * settingCategoryVC = (HLLSortCategoryViewController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Check" storyBoardID:ConfigureCategoryViewControllerStoryBoardID];
+    settingCategoryVC.defaultSetup = YES;
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:settingCategoryVC];
+    
+    self.window.rootViewController = nav;
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+- (void) setupRootViewControllerWithCheckViewController{
+    
+    UIViewController * rootViewController = [StoryBoardUtilities viewControllerForStoryboardName:@"Main" storyBoardID:RootNavigationViewControllerStoryBoardID];
+    
+    self.window.rootViewController = rootViewController;
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
 
 @end

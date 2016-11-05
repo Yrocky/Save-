@@ -9,6 +9,12 @@
         <mutableArray key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
         </mutableArray>
+        <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </mutableArray>
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--Data Source-->
@@ -116,7 +122,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jYe-Jx-1H2">
-                        <barButtonItem key="leftBarButtonItem" image="advance_filled" id="2bB-GG-i2d">
+                        <barButtonItem key="leftBarButtonItem" image="backpng" id="2bB-GG-i2d">
                             <color key="tintColor" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="backButtonHandle:" destination="38A-w7-gK4" id="Sbn-1J-VoT"/>
@@ -166,6 +172,7 @@
                             <constraint firstItem="lZY-U0-Wu0" firstAttribute="top" secondItem="uXm-xN-ZYM" secondAttribute="bottom" id="vw3-Fb-n66"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="设置" id="492-i4-ydK"/>
                     <connections>
                         <outlet property="settingTableView" destination="uXm-xN-ZYM" id="4cI-0c-GpN"/>
                         <segue destination="FQl-Hh-pvo" kind="show" identifier="sortCategoryViewControllerIdentifier" id="bFv-ZZ-BTF"/>
@@ -175,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="1868" y="365"/>
         </scene>
-        <!--Sort Category View Controller-->
+        <!--分类设置-->
         <scene sceneID="NiF-CC-fUg">
             <objects>
-                <viewController id="FQl-Hh-pvo" customClass="HLLSortCategoryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfigureCategoryViewControllerStoryBoardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FQl-Hh-pvo" customClass="HLLSortCategoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hJx-71-7xx"/>
                         <viewControllerLayoutGuide type="bottom" id="Epr-dt-6wb"/>
@@ -186,19 +193,154 @@
                     <view key="view" contentMode="scaleToFill" id="eMH-Wn-RoL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6IO-Ln-8M8">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dTT-yD-DHx">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I09-Jf-LRH">
+                                        <frame key="frameInset" minY="64" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="FQl-Hh-pvo" id="RKT-t0-ZcT"/>
+                                    <outlet property="delegate" destination="FQl-Hh-pvo" id="gBf-sS-gwH"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6IO-Ln-8M8" secondAttribute="trailing" id="8MJ-wX-Clo"/>
+                            <constraint firstItem="6IO-Ln-8M8" firstAttribute="leading" secondItem="eMH-Wn-RoL" secondAttribute="leading" id="bfF-1u-vDJ"/>
+                            <constraint firstItem="6IO-Ln-8M8" firstAttribute="top" secondItem="hJx-71-7xx" secondAttribute="bottom" id="sOh-W3-KYC"/>
+                            <constraint firstItem="Epr-dt-6wb" firstAttribute="top" secondItem="6IO-Ln-8M8" secondAttribute="bottom" id="ulh-u2-3IP"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="分类设置" id="XGg-Is-sm2"/>
+                    <connections>
+                        <outlet property="categoryCollectionView" destination="6IO-Ln-8M8" id="XQZ-mM-Lmp"/>
+                        <segue destination="uBm-pN-qND" kind="show" identifier="CustomCategoryColorIdentifier" id="1ij-aO-btb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BX4-3B-vNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2644" y="365"/>
+        </scene>
+        <!--自定义颜色-->
+        <scene sceneID="y6a-g2-MCK">
+            <objects>
+                <viewController storyboardIdentifier="CustomColorViewControllerStoryBoardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uBm-pN-qND" customClass="HLLCustomColorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7mw-5b-C9h"/>
+                        <viewControllerLayoutGuide type="bottom" id="m0j-Hn-1O6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gil-YR-eNK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQx-y2-u2o">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category_icon_car" translatesAutoresizingMaskIntoConstraints="NO" id="L3i-WO-mcW">
+                                        <color key="backgroundColor" red="0.37766331419999999" green="0.57778880619999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="1Aj-ed-xG0"/>
+                                    <constraint firstItem="L3i-WO-mcW" firstAttribute="centerX" secondItem="vQx-y2-u2o" secondAttribute="centerX" id="n3N-5U-rXM"/>
+                                    <constraint firstAttribute="height" constant="50" id="oxX-Wh-msG"/>
+                                    <constraint firstItem="L3i-WO-mcW" firstAttribute="centerY" secondItem="vQx-y2-u2o" secondAttribute="centerY" id="ue2-11-X64"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category_icon_car" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-BS-kAd">
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="0XX-ES-Fzv"/>
+                                    <constraint firstAttribute="width" constant="35" id="NaD-QV-GbJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分类名少于5个字符" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhZ-Q6-1Q2">
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="11"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zv5-mM-8ce" customClass="DRColorPickerWheelView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.12941176469999999" green="0.68627450980000004" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="分类名称" adjustsFontSizeToFit="NO" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="esf-Ah-eEO" customClass="HLLLimitTextField">
+                                <color key="tintColor" red="0.12941176470588234" green="0.68627450980392157" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="RXL-6d-Lxd"/>
+                                    <constraint firstAttribute="height" constant="20" id="bfs-FU-70U"/>
+                                </constraints>
+                                <color key="textColor" red="0.12941176469999999" green="0.68627450980000004" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="limitLength">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Zv5-mM-8ce" secondAttribute="trailing" id="Dui-9c-Efb"/>
+                            <constraint firstItem="vQx-y2-u2o" firstAttribute="centerY" secondItem="0u1-BS-kAd" secondAttribute="centerY" id="GS9-fw-dim"/>
+                            <constraint firstItem="m0j-Hn-1O6" firstAttribute="top" secondItem="Zv5-mM-8ce" secondAttribute="bottom" id="Jdl-qb-PMC"/>
+                            <constraint firstItem="vQx-y2-u2o" firstAttribute="leading" secondItem="0u1-BS-kAd" secondAttribute="trailing" constant="10" id="LHr-u5-z4L"/>
+                            <constraint firstItem="esf-Ah-eEO" firstAttribute="top" secondItem="7mw-5b-C9h" secondAttribute="bottom" constant="20" id="N4z-cX-05g"/>
+                            <constraint firstItem="L3i-WO-mcW" firstAttribute="height" secondItem="0u1-BS-kAd" secondAttribute="height" id="Ook-xn-g1Y"/>
+                            <constraint firstItem="0u1-BS-kAd" firstAttribute="leading" secondItem="esf-Ah-eEO" secondAttribute="trailing" constant="40" id="PUR-Lr-v5z"/>
+                            <constraint firstItem="nhZ-Q6-1Q2" firstAttribute="top" secondItem="esf-Ah-eEO" secondAttribute="bottom" constant="5" id="T4k-o3-lom"/>
+                            <constraint firstItem="Zv5-mM-8ce" firstAttribute="leading" secondItem="gil-YR-eNK" secondAttribute="leading" id="WVb-KU-52z"/>
+                            <constraint firstItem="0u1-BS-kAd" firstAttribute="top" secondItem="7mw-5b-C9h" secondAttribute="bottom" constant="20" id="azk-fG-Jgq"/>
+                            <constraint firstItem="L3i-WO-mcW" firstAttribute="width" secondItem="0u1-BS-kAd" secondAttribute="width" id="jUM-9a-04y"/>
+                            <constraint firstItem="esf-Ah-eEO" firstAttribute="leading" secondItem="gil-YR-eNK" secondAttribute="leading" constant="20" id="mPN-S4-Vae"/>
+                            <constraint firstItem="Zv5-mM-8ce" firstAttribute="top" secondItem="nhZ-Q6-1Q2" secondAttribute="bottom" constant="20" id="q2K-9O-ux1"/>
+                            <constraint firstItem="nhZ-Q6-1Q2" firstAttribute="leading" secondItem="esf-Ah-eEO" secondAttribute="leading" id="s76-4W-3Zf"/>
+                            <constraint firstAttribute="trailing" secondItem="0u1-BS-kAd" secondAttribute="trailing" constant="20" id="zbD-Xh-1XG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="zbD-Xh-1XG"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="自定义颜色" id="WJn-JZ-oCN"/>
+                    <connections>
+                        <outlet property="categoryColorPickerView" destination="Zv5-mM-8ce" id="Nfe-Vs-xLm"/>
+                        <outlet property="categoryNameTetField" destination="esf-Ah-eEO" id="48B-ET-SZr"/>
+                        <outlet property="categoryNormalImageView" destination="0u1-BS-kAd" id="VS4-72-fI2"/>
+                        <outlet property="categorySelectedContentView" destination="vQx-y2-u2o" id="AIo-tJ-083"/>
+                        <outlet property="categorySelectedImageView" destination="L3i-WO-mcW" id="ELW-TW-BLT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q6h-V9-dyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3428" y="364.7676161919041"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bvl-4Y-NiI">
             <objects>
                 <navigationController storyboardIdentifier="CheckNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NFu-9e-uBG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I3N-kO-uVJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I3N-kO-uVJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -231,7 +373,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="advance_filled" width="37" height="37"/>
+        <image name="backpng" width="10" height="18"/>
+        <image name="category_icon_car" width="54" height="30"/>
         <image name="sorting_options.png" width="30" height="30"/>
     </resources>
 </document>

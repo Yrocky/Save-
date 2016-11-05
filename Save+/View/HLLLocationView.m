@@ -37,7 +37,7 @@
     
     self.iconImageView.backgroundColor = [UIColor clearColor];
     
-    self.locationInfoLabel.textColor = [UIColor colorWithHexString:@"21af73"];
+    self.locationInfoLabel.textColor = kTheme_Color;
     self.locationInfoLabel.backgroundColor = [UIColor clearColor];
     self.locationInfoLabel.text = @"定位中....";
 }

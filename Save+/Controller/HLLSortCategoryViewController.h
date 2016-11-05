@@ -10,4 +10,6 @@
 
 @interface HLLSortCategoryViewController : UIViewController
 
+@property (nonatomic ,assign ,getter=isDefaultSetup) BOOL defaultSetup;
+
 @end

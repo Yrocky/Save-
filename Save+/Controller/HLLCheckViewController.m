@@ -59,7 +59,7 @@
 
     self.tableFooterView.backgroundColor     = [UIColor clearColor];
 
-    self.billManager                         = [[HLLBillManager alloc] init];
+    self.billManager                         = [HLLBillManager sharedManager];
 
     self.bills                               = [NSMutableArray array];
 }
@@ -127,7 +127,7 @@
     NSArray * bills                    = [self.billManager queryBillsAtDate:date];
     if (bills.count > 0) {
         
-        [self.bills addObjectsFromArray:[self.billManager queryBillsAtDate:date]];
+        [self.bills addObjectsFromArray:bills];
         self.billTableView.tableFooterView = nil;
         self.billTableView.tableHeaderView = self.tableHeaderView;
     }else{
@@ -138,9 +138,10 @@
     
     [self.billTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     
+    // chart需要进行同类型的记账信息归类
     [self.chartViewController reloadChartDataAtDate:date];
     
-    NSLog(@"%@",[self.billManager queryBillsDataAtDate:date]);
+    NSLog(@"queryBillsDataAtDate:%@",[self.billManager queryBillsDataAtDate:date]);
     
 }
 

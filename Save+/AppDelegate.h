@@ -12,6 +12,10 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (AppDelegate *)appDelegate;
 
+- (void) setupRootViewControllerWithDefaultCategoryConfigure;
+
+- (void) setupRootViewControllerWithCheckViewController;
 @end
 

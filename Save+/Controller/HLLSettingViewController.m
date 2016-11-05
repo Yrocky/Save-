@@ -34,7 +34,6 @@
     self.settingTableView.dataSource      = self.dataSource;
     self.settingTableView.delegate        = self;
     self.settingTableView.tableHeaderView = [self tableViewHeaderView];
-        
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
@@ -53,8 +52,8 @@
         setting.verify = NO;
         [defaultRealm commitWriteTransaction];
     }
-    
 }
+
 #pragma mark - Method
 
 - (void) setupSettingUI{
@@ -109,7 +108,7 @@
         label.text          = text;
         label.numberOfLines = 0;
         label.font          = [UIFont fontWithName:LATO_LIGHT size:13];
-        label.textColor     = [UIColor colorWithHexString:@"#999999"];
+        label.textColor     = [UIColor colorWithHexString:@"999999"];
         [sectionFooterView addSubview:label];
         
         return sectionFooterView;

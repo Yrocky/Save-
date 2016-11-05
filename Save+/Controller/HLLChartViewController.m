@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.billManager = [[HLLBillManager alloc] init];
+    self.billManager = [HLLBillManager sharedManager];
 
     self.pieChart    = [[PNPieChart alloc] initWithFrame:CGRectMake(10, 25, 250, 250) items:nil];
     self.pieChart.descriptionTextColor       = [UIColor whiteColor];
@@ -38,7 +38,7 @@
     [self.pieChart strokeChart];
 
     self.pieChart.legendStyle                = PNLegendItemStyleStacked;
-    self.pieChart.legendFontColor            = [UIColor colorWithHexString:@"#6F818D"];
+    self.pieChart.legendFontColor            = kTheme_Color;
     self.pieChart.legendFont                 = [UIFont fontWithName:LATO_BOLD size:12];
 
     [self.view addSubview:self.pieChart];
@@ -55,15 +55,15 @@
 
 - (NSArray *) mapBillToItemAtDate:(NSDate *)date{
     
-    NSArray * bills = [self.billManager queryBillsAtDate:date];
+    NSArray * bills = [self.billManager queryBillsDataAtDate:date];
     
     NSMutableArray * items = [NSMutableArray arrayWithCapacity:bills.count];
     
-    for (HLLBill * bill in bills) {
+    for (NSDictionary * bill in bills) {
         
-        PNPieChartDataItem * item = [PNPieChartDataItem dataItemWithValue:bill.amount.floatValue
-                                                                    color:[UIColor colorWithHexString:bill.category.categoryColor]
-                                                              description:bill.category.categoryName];
+        PNPieChartDataItem * item = [PNPieChartDataItem dataItemWithValue:[bill[@"value"] floatValue]
+                                                                    color:bill[@"color"]
+                                                              description:bill[@"description"]];
         [items addObject:item];
     }
     return items;

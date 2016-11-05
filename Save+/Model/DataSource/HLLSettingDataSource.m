@@ -124,7 +124,7 @@
     HLLSettingTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:[HLLSettingTableViewCell hll_cellIdentifier] forIndexPath:indexPath];
     cell.textLabel.font = [UIFont fontWithName:LATO_REGULAR size:16];
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
-    cell.textLabel.textColor = [UIColor colorWithHexString:@"333333"];
+    cell.textLabel.textColor = kGray_Color;
     
     if (indexPath.section == 0) {
         
@@ -135,8 +135,8 @@
             budgetTextField.font = [UIFont fontWithName:LATO_REGULAR size:15];
             budgetTextField.keyboardType = UIKeyboardTypeNumberPad;
             budgetTextField.textAlignment = NSTextAlignmentRight;
-            budgetTextField.textColor = [UIColor colorWithHexString:@"21AF73"];
-            budgetTextField.tintColor = [UIColor colorWithHexString:@"21AF73"];
+            budgetTextField.textColor = kTheme_Color;
+            budgetTextField.tintColor = kTheme_Color;
             budgetTextField.placeholder = @"预算金额";
             [budgetTextField addTarget:self action:@selector(budgetChangeTextHandle:) forControlEvents:UIControlEventEditingChanged];
             cell.accessoryView = budgetTextField;
@@ -192,7 +192,7 @@
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.textLabel.text = @"备份数据至iCloud";
         cell.accessoryView = nil;
-        cell.textLabel.textColor = [UIColor colorWithHexString:@"21AF73"];
+        cell.textLabel.textColor = kTheme_Color;
     }
     if (indexPath.section == 3) {
         cell.textLabel.textAlignment = NSTextAlignmentCenter;

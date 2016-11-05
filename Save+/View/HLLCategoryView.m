@@ -32,7 +32,9 @@
     
     self.backgroundColor = [UIColor whiteColor];
 
-    _categoryResults = [[HLLCategory allObjects] sortedResultsUsingProperty:@"categoryRank" ascending:YES];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"active = %d",YES];
+    RLMResults * result = [[HLLCategory allObjects] objectsWithPredicate:pred];
+    _categoryResults = [result sortedResultsUsingProperty:@"categoryRank" ascending:YES];
     
     _categoryCollectionView.delegate = self;
     _categoryCollectionView.dataSource = self;

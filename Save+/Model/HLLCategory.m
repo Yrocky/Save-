@@ -15,7 +15,14 @@
 + (NSDictionary *)defaultPropertyValues
 {
     return @{@"type":@0,
-             @"active":@YES};
+             @"active":@YES,
+             @"categoryRank":@1};
+}
+
+// 设置主键
++ (NSString *)primaryKey {
+
+    return @"categoryIcon";
 }
 
 // Specify properties to ignore (Realm won't persist these)

@@ -12,12 +12,12 @@
 
 
 /**
- *  当前记账的收入/支出类型，支出 = 0，收入 = 1
+ *  当前记账的收入/支出类型，支出 = 0，收入 = 1，预留字段
  */
 @property NSNumber<RLMInt>      * type;
 
 /**
- *  分类的排列
+ *  分类的排列，预留字段
  */
 @property NSInteger               categoryRank;
 

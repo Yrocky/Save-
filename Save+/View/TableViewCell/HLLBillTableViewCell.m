@@ -52,7 +52,7 @@
     self.categoryIconBackgroundView.layer.cornerRadius  = 25;
     
     self.categoryLineViewHeightConstraint.constant = OnePixel;
-    self.categoryLineView.backgroundColor          = [[UIColor lightGrayColor] colorWithAlphaComponent:0.25];
+    self.categoryLineView.backgroundColor          = kLine_Color;
     
     self.categoryPanGesture          = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(categoryPanGestureHandle:)];
     self.categoryPanGesture.delegate = self;
@@ -134,8 +134,8 @@
             self.editContentView.alpha   = cueAlpha;
             self.deleteContentView.alpha = cueAlpha;
             
-            self.editContentView.backgroundColor   = self.complantOnDragRelease ? [UIColor colorWithHexString:@"#21AF73"]: [UIColor colorWithHexString:@"#6F818D"];
-            self.deleteContentView.backgroundColor = self.deleteOnDragRelease ? [UIColor colorWithHexString:@"#F26163"] : [UIColor colorWithHexString:@"#6F818D"];
+            self.editContentView.backgroundColor   = self.complantOnDragRelease ? [UIColor colorWithHexString:@"21AF73"]: [UIColor colorWithHexString:@"6F818D"];
+            self.deleteContentView.backgroundColor = self.deleteOnDragRelease ? [UIColor colorWithHexString:@"F26163"] : [UIColor colorWithHexString:@"6F818D"];
         }];
     }
     

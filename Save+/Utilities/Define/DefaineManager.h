@@ -52,6 +52,9 @@
 // 获得设备iOS版本
 #define IOSVersion  [[[UIDevice currentDevice] systemVersion] floatValue]
 
+#define kScreen_Bounds [UIScreen mainScreen].bounds
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScreen_Width  [UIScreen mainScreen].bounds.size.width
 
 #define  LATO_REGULAR   @"Lato-Regular"
 #define  LATO_BOLD      @"Lato-Bold"
@@ -59,6 +62,11 @@
 #define  LATO_THIN      @"Lato-Thin"
 #define  LATO_LIGHT     @"Lato-Light"
 #define  LATO_THIN_IT   @"Lato-ThinItalic"
+
+#define kTheme_Color    [UIColor colorWithHexString:@"21AF73"]
+#define kGray_Color     [UIColor colorWithHexString:@"6F818D"]
+#define kLine_Color     [[UIColor lightGrayColor] colorWithAlphaComponent:0.25]
+
 
 #define OnePixel 1 / [UIScreen mainScreen].scale
 #endif /* DefaineManager_h */

@@ -9,6 +9,27 @@
 /* Begin PBXBuildFile section */
 		189E788E62DD12FA304C3591 /* libPods-Save+.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F22C38795282ED054C65B /* libPods-Save+.a */; };
 		D732BE731D2A04B9000029A9 /* HLLLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D732BE721D2A04B9000029A9 /* HLLLocationView.m */; };
+		D7345BB01DCC57C3007D149D /* HLLCustomColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BAF1DCC57C3007D149D /* HLLCustomColorViewController.m */; };
+		D7345BD41DCC7325007D149D /* DRColorPicker+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BB31DCC7325007D149D /* DRColorPicker+UIColor.m */; };
+		D7345BD51DCC7325007D149D /* DRColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BB51DCC7325007D149D /* DRColorPicker.m */; };
+		D7345BD61DCC7325007D149D /* DRColorPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BB71DCC7325007D149D /* DRColorPickerBaseViewController.m */; };
+		D7345BD71DCC7325007D149D /* DRColorPickerColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BB91DCC7325007D149D /* DRColorPickerColor.m */; };
+		D7345BD81DCC7325007D149D /* DRColorPickerColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BBB1DCC7325007D149D /* DRColorPickerColorView.m */; };
+		D7345BD91DCC7325007D149D /* DRColorPickerGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BBD1DCC7325007D149D /* DRColorPickerGridView.m */; };
+		D7345BDA1DCC7325007D149D /* DRColorPickerGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BBF1DCC7325007D149D /* DRColorPickerGridViewCell.m */; };
+		D7345BDB1DCC7325007D149D /* DRColorPickerGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BC11DCC7325007D149D /* DRColorPickerGridViewController.m */; };
+		D7345BDC1DCC7325007D149D /* DRColorPickerHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BC31DCC7325007D149D /* DRColorPickerHomeView.m */; };
+		D7345BDD1DCC7325007D149D /* DRColorPickerHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BC51DCC7325007D149D /* DRColorPickerHomeViewController.m */; };
+		D7345BDE1DCC7325007D149D /* DRColorPickerHorizontalCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BC71DCC7325007D149D /* DRColorPickerHorizontalCollectionViewLayout.m */; };
+		D7345BDF1DCC7325007D149D /* DRColorPickerHueView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BC91DCC7325007D149D /* DRColorPickerHueView.m */; };
+		D7345BE01DCC7325007D149D /* DRColorPickerHueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BCB1DCC7325007D149D /* DRColorPickerHueViewController.m */; };
+		D7345BE11DCC7325007D149D /* DRColorPickerStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BCD1DCC7325007D149D /* DRColorPickerStore.m */; };
+		D7345BE21DCC7325007D149D /* DRColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BCF1DCC7325007D149D /* DRColorPickerViewController.m */; };
+		D7345BE31DCC7325007D149D /* DRColorPickerWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BD11DCC7325007D149D /* DRColorPickerWheelView.m */; };
+		D7345BE41DCC7325007D149D /* DRColorPickerWheelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BD31DCC7325007D149D /* DRColorPickerWheelViewController.m */; };
+		D7345BE71DCC8551007D149D /* HLLLimitTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BE61DCC8551007D149D /* HLLLimitTextField.m */; };
+		D73A17F81DCC273D00A74A02 /* HLLCategorySettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D73A17F61DCC273D00A74A02 /* HLLCategorySettingCell.m */; };
+		D73A17F91DCC273D00A74A02 /* HLLCategorySettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D73A17F71DCC273D00A74A02 /* HLLCategorySettingCell.xib */; };
 		D744339A1D2A592900693546 /* ZASyncURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D74433991D2A592900693546 /* ZASyncURLConnection.m */; };
 		D744339D1D2A59A000693546 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D744339C1D2A59A000693546 /* UIImage+ImageEffects.m */; };
 		D74433A91D2B51D700693546 /* HLLBillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D74433A71D2B51D700693546 /* HLLBillTableViewCell.m */; };
@@ -230,6 +251,48 @@
 		68EF3EEAB3954E1D6127091E /* Pods-Save+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save+.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save+/Pods-Save+.release.xcconfig"; sourceTree = "<group>"; };
 		D732BE711D2A04B9000029A9 /* HLLLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLLocationView.h; sourceTree = "<group>"; };
 		D732BE721D2A04B9000029A9 /* HLLLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLLocationView.m; sourceTree = "<group>"; };
+		D7345BAE1DCC57C3007D149D /* HLLCustomColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCustomColorViewController.h; sourceTree = "<group>"; };
+		D7345BAF1DCC57C3007D149D /* HLLCustomColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCustomColorViewController.m; sourceTree = "<group>"; };
+		D7345BB21DCC7325007D149D /* DRColorPicker+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRColorPicker+UIColor.h"; sourceTree = "<group>"; };
+		D7345BB31DCC7325007D149D /* DRColorPicker+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DRColorPicker+UIColor.m"; sourceTree = "<group>"; };
+		D7345BB41DCC7325007D149D /* DRColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPicker.h; sourceTree = "<group>"; };
+		D7345BB51DCC7325007D149D /* DRColorPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPicker.m; sourceTree = "<group>"; };
+		D7345BB61DCC7325007D149D /* DRColorPickerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerBaseViewController.h; sourceTree = "<group>"; };
+		D7345BB71DCC7325007D149D /* DRColorPickerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerBaseViewController.m; sourceTree = "<group>"; };
+		D7345BB81DCC7325007D149D /* DRColorPickerColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerColor.h; sourceTree = "<group>"; };
+		D7345BB91DCC7325007D149D /* DRColorPickerColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerColor.m; sourceTree = "<group>"; };
+		D7345BBA1DCC7325007D149D /* DRColorPickerColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerColorView.h; sourceTree = "<group>"; };
+		D7345BBB1DCC7325007D149D /* DRColorPickerColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerColorView.m; sourceTree = "<group>"; };
+		D7345BBC1DCC7325007D149D /* DRColorPickerGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerGridView.h; sourceTree = "<group>"; };
+		D7345BBD1DCC7325007D149D /* DRColorPickerGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerGridView.m; sourceTree = "<group>"; };
+		D7345BBE1DCC7325007D149D /* DRColorPickerGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerGridViewCell.h; sourceTree = "<group>"; };
+		D7345BBF1DCC7325007D149D /* DRColorPickerGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerGridViewCell.m; sourceTree = "<group>"; };
+		D7345BC01DCC7325007D149D /* DRColorPickerGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerGridViewController.h; sourceTree = "<group>"; };
+		D7345BC11DCC7325007D149D /* DRColorPickerGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerGridViewController.m; sourceTree = "<group>"; };
+		D7345BC21DCC7325007D149D /* DRColorPickerHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerHomeView.h; sourceTree = "<group>"; };
+		D7345BC31DCC7325007D149D /* DRColorPickerHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerHomeView.m; sourceTree = "<group>"; };
+		D7345BC41DCC7325007D149D /* DRColorPickerHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerHomeViewController.h; sourceTree = "<group>"; };
+		D7345BC51DCC7325007D149D /* DRColorPickerHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerHomeViewController.m; sourceTree = "<group>"; };
+		D7345BC61DCC7325007D149D /* DRColorPickerHorizontalCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerHorizontalCollectionViewLayout.h; sourceTree = "<group>"; };
+		D7345BC71DCC7325007D149D /* DRColorPickerHorizontalCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerHorizontalCollectionViewLayout.m; sourceTree = "<group>"; };
+		D7345BC81DCC7325007D149D /* DRColorPickerHueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerHueView.h; sourceTree = "<group>"; };
+		D7345BC91DCC7325007D149D /* DRColorPickerHueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerHueView.m; sourceTree = "<group>"; };
+		D7345BCA1DCC7325007D149D /* DRColorPickerHueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerHueViewController.h; sourceTree = "<group>"; };
+		D7345BCB1DCC7325007D149D /* DRColorPickerHueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerHueViewController.m; sourceTree = "<group>"; };
+		D7345BCC1DCC7325007D149D /* DRColorPickerStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerStore.h; sourceTree = "<group>"; };
+		D7345BCD1DCC7325007D149D /* DRColorPickerStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerStore.m; sourceTree = "<group>"; };
+		D7345BCE1DCC7325007D149D /* DRColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerViewController.h; sourceTree = "<group>"; };
+		D7345BCF1DCC7325007D149D /* DRColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerViewController.m; sourceTree = "<group>"; };
+		D7345BD01DCC7325007D149D /* DRColorPickerWheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerWheelView.h; sourceTree = "<group>"; };
+		D7345BD11DCC7325007D149D /* DRColorPickerWheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerWheelView.m; sourceTree = "<group>"; };
+		D7345BD21DCC7325007D149D /* DRColorPickerWheelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRColorPickerWheelViewController.h; sourceTree = "<group>"; };
+		D7345BD31DCC7325007D149D /* DRColorPickerWheelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerWheelViewController.m; sourceTree = "<group>"; };
+		D7345BE51DCC8551007D149D /* HLLLimitTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLLimitTextField.h; sourceTree = "<group>"; };
+		D7345BE61DCC8551007D149D /* HLLLimitTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLLimitTextField.m; sourceTree = "<group>"; };
+		D73A17F31DCB821200A74A02 /* NoticationName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticationName.h; sourceTree = "<group>"; };
+		D73A17F51DCC273D00A74A02 /* HLLCategorySettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCategorySettingCell.h; sourceTree = "<group>"; };
+		D73A17F61DCC273D00A74A02 /* HLLCategorySettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCategorySettingCell.m; sourceTree = "<group>"; };
+		D73A17F71DCC273D00A74A02 /* HLLCategorySettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLLCategorySettingCell.xib; sourceTree = "<group>"; };
 		D74433981D2A592900693546 /* ZASyncURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASyncURLConnection.h; sourceTree = "<group>"; };
 		D74433991D2A592900693546 /* ZASyncURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASyncURLConnection.m; sourceTree = "<group>"; };
 		D744339B1D2A59A000693546 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -455,6 +518,57 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D7345BB11DCC7325007D149D /* DRColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D7345BB21DCC7325007D149D /* DRColorPicker+UIColor.h */,
+				D7345BB31DCC7325007D149D /* DRColorPicker+UIColor.m */,
+				D7345BB41DCC7325007D149D /* DRColorPicker.h */,
+				D7345BB51DCC7325007D149D /* DRColorPicker.m */,
+				D7345BB61DCC7325007D149D /* DRColorPickerBaseViewController.h */,
+				D7345BB71DCC7325007D149D /* DRColorPickerBaseViewController.m */,
+				D7345BB81DCC7325007D149D /* DRColorPickerColor.h */,
+				D7345BB91DCC7325007D149D /* DRColorPickerColor.m */,
+				D7345BBA1DCC7325007D149D /* DRColorPickerColorView.h */,
+				D7345BBB1DCC7325007D149D /* DRColorPickerColorView.m */,
+				D7345BBC1DCC7325007D149D /* DRColorPickerGridView.h */,
+				D7345BBD1DCC7325007D149D /* DRColorPickerGridView.m */,
+				D7345BBE1DCC7325007D149D /* DRColorPickerGridViewCell.h */,
+				D7345BBF1DCC7325007D149D /* DRColorPickerGridViewCell.m */,
+				D7345BC01DCC7325007D149D /* DRColorPickerGridViewController.h */,
+				D7345BC11DCC7325007D149D /* DRColorPickerGridViewController.m */,
+				D7345BC21DCC7325007D149D /* DRColorPickerHomeView.h */,
+				D7345BC31DCC7325007D149D /* DRColorPickerHomeView.m */,
+				D7345BC41DCC7325007D149D /* DRColorPickerHomeViewController.h */,
+				D7345BC51DCC7325007D149D /* DRColorPickerHomeViewController.m */,
+				D7345BC61DCC7325007D149D /* DRColorPickerHorizontalCollectionViewLayout.h */,
+				D7345BC71DCC7325007D149D /* DRColorPickerHorizontalCollectionViewLayout.m */,
+				D7345BC81DCC7325007D149D /* DRColorPickerHueView.h */,
+				D7345BC91DCC7325007D149D /* DRColorPickerHueView.m */,
+				D7345BCA1DCC7325007D149D /* DRColorPickerHueViewController.h */,
+				D7345BCB1DCC7325007D149D /* DRColorPickerHueViewController.m */,
+				D7345BCC1DCC7325007D149D /* DRColorPickerStore.h */,
+				D7345BCD1DCC7325007D149D /* DRColorPickerStore.m */,
+				D7345BCE1DCC7325007D149D /* DRColorPickerViewController.h */,
+				D7345BCF1DCC7325007D149D /* DRColorPickerViewController.m */,
+				D7345BD01DCC7325007D149D /* DRColorPickerWheelView.h */,
+				D7345BD11DCC7325007D149D /* DRColorPickerWheelView.m */,
+				D7345BD21DCC7325007D149D /* DRColorPickerWheelViewController.h */,
+				D7345BD31DCC7325007D149D /* DRColorPickerWheelViewController.m */,
+			);
+			path = DRColorPicker;
+			sourceTree = "<group>";
+		};
+		D73A17F41DCC271000A74A02 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D73A17F51DCC273D00A74A02 /* HLLCategorySettingCell.h */,
+				D73A17F61DCC273D00A74A02 /* HLLCategorySettingCell.m */,
+				D73A17F71DCC273D00A74A02 /* HLLCategorySettingCell.xib */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		D74433971D2A592900693546 /* ZASyncURLConnection */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +609,8 @@
 				D78015C41D23A92E00A0CD13 /* HLLToggle.m */,
 				D732BE711D2A04B9000029A9 /* HLLLocationView.h */,
 				D732BE721D2A04B9000029A9 /* HLLLocationView.m */,
+				D7345BE51DCC8551007D149D /* HLLLimitTextField.h */,
+				D7345BE61DCC8551007D149D /* HLLLimitTextField.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -668,6 +784,7 @@
 				D78015B91D239EA600A0CD13 /* TableViewCell */,
 				D74433B71D2BA73F00693546 /* Home */,
 				D74433B81D2BA74A00693546 /* Check */,
+				D73A17F41DCC271000A74A02 /* Setting */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -720,10 +837,10 @@
 				D75BCB0D1D18EC2600FDF5F3 /* HLLCategory.m */,
 				D78015C91D23ADDC00A0CD13 /* HLLSetting.h */,
 				D78015CA1D23ADDC00A0CD13 /* HLLSetting.m */,
-				D75BCB2D1D1928FF00FDF5F3 /* HLLCategoryHelper.h */,
-				D75BCB2E1D1928FF00FDF5F3 /* HLLCategoryHelper.m */,
 				D78015B61D237F2800A0CD13 /* HLLTouchIDHelper.h */,
 				D78015B71D237F2800A0CD13 /* HLLTouchIDHelper.m */,
+				D75BCB2D1D1928FF00FDF5F3 /* HLLCategoryHelper.h */,
+				D75BCB2E1D1928FF00FDF5F3 /* HLLCategoryHelper.m */,
 				D74433B01D2B5C9D00693546 /* HLLBillManager.h */,
 				D74433B11D2B5C9D00693546 /* HLLBillManager.m */,
 				D78015BF1D23A1AE00A0CD13 /* DataSource */,
@@ -745,6 +862,8 @@
 				D766A8441D203576005D769C /* HLLSettingViewController.m */,
 				D74433BC1D2BB32500693546 /* HLLSortCategoryViewController.h */,
 				D74433BD1D2BB32500693546 /* HLLSortCategoryViewController.m */,
+				D7345BAE1DCC57C3007D149D /* HLLCustomColorViewController.h */,
+				D7345BAF1DCC57C3007D149D /* HLLCustomColorViewController.m */,
 				D7CF85EE1D2D41F70084227D /* HLLMapViewController.h */,
 				D7CF85EF1D2D41F70084227D /* HLLMapViewController.m */,
 				D7CF86001D2D635E0084227D /* HLLChartViewController.h */,
@@ -766,6 +885,7 @@
 		D75BCB161D19226A00FDF5F3 /* Third-Party */ = {
 			isa = PBXGroup;
 			children = (
+				D7345BB11DCC7325007D149D /* DRColorPicker */,
 				D7CF85F11D2D42CD0084227D /* AnnotationCluster */,
 				D74433BF1D2BB9E200693546 /* dr-Charts */,
 				D74433971D2A592900693546 /* ZASyncURLConnection */,
@@ -779,6 +899,7 @@
 			isa = PBXGroup;
 			children = (
 				D766A84F1D20378C005D769C /* StoryBoardIdHeader.h */,
+				D73A17F31DCB821200A74A02 /* NoticationName.h */,
 				D766A84B1D203750005D769C /* Utils */,
 				D75BCB181D19226A00FDF5F3 /* Category */,
 				D75BCB191D19226A00FDF5F3 /* Define */,
@@ -1065,6 +1186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75BCAD91D13EED000FDF5F3 /* LaunchScreen.storyboard in Resources */,
+				D73A17F91DCC273D00A74A02 /* HLLCategorySettingCell.xib in Resources */,
 				D766A8471D203637005D769C /* Check.storyboard in Resources */,
 				D74433E31D2BB9E200693546 /* Info.plist in Resources */,
 				D75BCB081D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.xib in Resources */,
@@ -1221,18 +1343,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7345BE11DCC7325007D149D /* DRColorPickerStore.m in Sources */,
 				D75BCB271D1922F900FDF5F3 /* UIColor+Common.m in Sources */,
+				D7345BDC1DCC7325007D149D /* DRColorPickerHomeView.m in Sources */,
+				D7345BE31DCC7325007D149D /* DRColorPickerWheelView.m in Sources */,
 				D74433DF1D2BB9E200693546 /* LegendView.m in Sources */,
 				D78015CE1D242C9400A0CD13 /* NSString+Size.m in Sources */,
 				D75BCB151D19214600FDF5F3 /* HLLKeyBoardInputButton.m in Sources */,
 				D75BCAE71D13F04D00FDF5F3 /* Lato-Bold.ttf in Sources */,
+				D7345BD41DCC7325007D149D /* DRColorPicker+UIColor.m in Sources */,
 				D75BCB321D1933FC00FDF5F3 /* HLLCategoryCellContentView.m in Sources */,
 				D78015E81D2611EE00A0CD13 /* StoryBoardUtilities.m in Sources */,
 				D78DD6711D2836850060B2E7 /* FSCalendar+IBExtension.m in Sources */,
 				D7CF85FD1D2D42CD0084227D /* TBQuadTree.m in Sources */,
+				D7345BDF1DCC7325007D149D /* DRColorPickerHueView.m in Sources */,
+				D7345BB01DCC57C3007D149D /* HLLCustomColorViewController.m in Sources */,
 				D78DD6771D2836850060B2E7 /* FSCalendarConstance.m in Sources */,
+				D7345BDB1DCC7325007D149D /* DRColorPickerGridViewController.m in Sources */,
 				D78DD6761D2836850060B2E7 /* FSCalendarCollectionView.m in Sources */,
 				D744339A1D2A592900693546 /* ZASyncURLConnection.m in Sources */,
+				D7345BDE1DCC7325007D149D /* DRColorPickerHorizontalCollectionViewLayout.m in Sources */,
+				D7345BE71DCC8551007D149D /* HLLLimitTextField.m in Sources */,
 				D75BCAF31D18D2FE00FDF5F3 /* HLLBill.m in Sources */,
 				D78DD6751D2836850060B2E7 /* FSCalendarCell.m in Sources */,
 				D75BCB0E1D18EC2600FDF5F3 /* HLLCategory.m in Sources */,
@@ -1246,8 +1377,10 @@
 				D78DD6731D2836850060B2E7 /* FSCalendarAnimator.m in Sources */,
 				D75BCAE91D13F04D00FDF5F3 /* Lato-Regular.ttf in Sources */,
 				D78015E71D2611EE00A0CD13 /* LocationHelper.m in Sources */,
+				D7345BD91DCC7325007D149D /* DRColorPickerGridView.m in Sources */,
 				D7CF86021D2D635E0084227D /* HLLChartViewController.m in Sources */,
 				D78DD66F1D2836850060B2E7 /* FSCalendar+DateTools.m in Sources */,
+				D7345BDA1DCC7325007D149D /* DRColorPickerGridViewCell.m in Sources */,
 				D75BCB2A1D1922F900FDF5F3 /* UIView+Common.m in Sources */,
 				D74433A91D2B51D700693546 /* HLLBillTableViewCell.m in Sources */,
 				D78DD67A1D2836850060B2E7 /* FSCalendarHeader.m in Sources */,
@@ -1262,15 +1395,20 @@
 				D732BE731D2A04B9000029A9 /* HLLLocationView.m in Sources */,
 				D74433BE1D2BB32500693546 /* HLLSortCategoryViewController.m in Sources */,
 				D75BCAEA1D13F04D00FDF5F3 /* Lato-Thin.ttf in Sources */,
+				D73A17F81DCC273D00A74A02 /* HLLCategorySettingCell.m in Sources */,
 				D7CF85FA1D2D42CD0084227D /* TBClusterAnnotation.m in Sources */,
 				D766A8451D203576005D769C /* HLLSettingViewController.m in Sources */,
 				D78DD67B1D2836850060B2E7 /* FSCalendarScopeHandle.m in Sources */,
 				D75BCB2F1D1928FF00FDF5F3 /* HLLCategoryHelper.m in Sources */,
+				D7345BD81DCC7325007D149D /* DRColorPickerColorView.m in Sources */,
 				D75BCAFC1D18D57400FDF5F3 /* HLLCategoryView.m in Sources */,
+				D7345BD61DCC7325007D149D /* DRColorPickerBaseViewController.m in Sources */,
 				D75BCAF61D18D31E00FDF5F3 /* HLLKeyboardView.m in Sources */,
 				D75BCB0B1D18D8AA00FDF5F3 /* HLLCategoryCollectionView.m in Sources */,
+				D7345BD51DCC7325007D149D /* DRColorPicker.m in Sources */,
 				D75BCB351D1949DE00FDF5F3 /* HLLKeyboardController.m in Sources */,
 				D74433B21D2B5C9D00693546 /* HLLBillManager.m in Sources */,
+				D7345BE01DCC7325007D149D /* DRColorPickerHueViewController.m in Sources */,
 				D78DD6701D2836850060B2E7 /* FSCalendar+Deprecated.m in Sources */,
 				D75BCB381D1989B000FDF5F3 /* HLLKeyboardSplitView.m in Sources */,
 				D78015C51D23A92E00A0CD13 /* HLLToggle.m in Sources */,
@@ -1283,6 +1421,8 @@
 				D75BCAF01D18D29700FDF5F3 /* ViewController.m in Sources */,
 				D74433DD1D2BB9E200693546 /* DRScrollView.m in Sources */,
 				D75BCAEB1D13F04D00FDF5F3 /* Lato-ThinItalic.ttf in Sources */,
+				D7345BE21DCC7325007D149D /* DRColorPickerViewController.m in Sources */,
+				D7345BD71DCC7325007D149D /* DRColorPickerColor.m in Sources */,
 				D74433E11D2BB9E200693546 /* MultiLineGraphView.m in Sources */,
 				D78DD6741D2836850060B2E7 /* FSCalendarAppearance.m in Sources */,
 				D75BCAD21D13EE4000FDF5F3 /* HLLInputView.m in Sources */,
@@ -1291,10 +1431,12 @@
 				D78015B81D237F2800A0CD13 /* HLLTouchIDHelper.m in Sources */,
 				D75BCB071D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.m in Sources */,
 				D78DD6721D2836850060B2E7 /* FSCalendar.m in Sources */,
+				D7345BDD1DCC7325007D149D /* DRColorPickerHomeViewController.m in Sources */,
 				D74433DB1D2BB9E200693546 /* BarChart.m in Sources */,
 				D75BCB261D1922F900FDF5F3 /* UIButton+ImageWithColor.m in Sources */,
 				D78DD6781D2836850060B2E7 /* FSCalendarEventIndicator.m in Sources */,
 				D74433E21D2BB9E200693546 /* PieChart.m in Sources */,
+				D7345BE41DCC7325007D149D /* DRColorPickerWheelViewController.m in Sources */,
 				D766A83A1D201271005D769C /* HLLNoteView.m in Sources */,
 				D74433DE1D2BB9E200693546 /* HorizontalStackBarChart.m in Sources */,
 				D744339D1D2A59A000693546 /* UIImage+ImageEffects.m in Sources */,

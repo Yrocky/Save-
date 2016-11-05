@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HLLCategory.h"
+
 
 @interface HLLCategoryHelper : NSObject
 
-+ (void) loadCategory;
++ (instancetype) shareCategoryHelper;
 
-+ (void) loadSetting;
+- (NSArray <HLLCategory *>*) allCategory;
+- (HLLCategory *) queryCategoryWithIcon:(NSString *)icon;
+- (void) updateCategory:(HLLCategory *)category action:(void (^)())action;
+
+- (void) loadDefault;
 @end

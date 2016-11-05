@@ -47,6 +47,13 @@
 
 @implementation ViewController
 
+- (void)loadView{
+
+    [super loadView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(categoryDidFinish) name:kLoadCategoryFinishNotication object:nil];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -55,24 +62,21 @@
     
     [self.view addGestureRecognizer:self.swipeGesture];
 }
+- (void)viewWillAppear:(BOOL)animated{
 
+    [super viewWillAppear:animated];
+    
+    [self.categoryView reloadCategoryView];
+}
 
 - (void)viewDidAppear:(BOOL)animated{
 
     [super viewDidAppear:animated];
-//    
-//    RLMResults<HLLCategory *> * categories = [HLLCategory allObjects];
-//
-//    for (HLLCategory * category in categories) {
-//        
-//        NSLog(@"category:%@",category);
-//    }
     
     RLMResults<HLLBill *> * billes = [HLLBill allObjects];
     
     for (HLLBill * bill in billes) {
         
-//        NSLog(@"bill:%@",bill);
         NSLog(@"bill'time:%@",bill.dateDetailString);
     }
     
@@ -87,6 +91,11 @@
 }
 
 #pragma mark - Method
+
+- (void) categoryDidFinish{
+    
+    [self.categoryView reloadCategoryView];
+}
 
 - (void) saveBill{
     
@@ -111,7 +120,7 @@
     bill.latitude = self.locationView.latitude;
     bill.locationInfo = self.locationView.loctionInfo;
     
-    HLLBillManager * billManager = [[HLLBillManager alloc] init];
+    HLLBillManager * billManager = [HLLBillManager sharedManager];
     
     [billManager addBill:bill];
     

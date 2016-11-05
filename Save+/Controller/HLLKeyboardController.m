@@ -41,7 +41,7 @@
     
     [self addLine];
     
-    [self.sureButton hll_setBackgroundImageWithColor:[UIColor colorWithHexString:@"#21AF73"] forState:UIControlStateNormal];
+    [self.sureButton hll_setBackgroundImageWithColor:kTheme_Color forState:UIControlStateNormal];
     [self.sureButton hll_setBackgroundImageWithColor:[UIColor colorWithHexString:@"5a9367"] forState:UIControlStateHighlighted];
     
     UIImage * sureImage = [[UIImage imageNamed:@"checkmark.png"] tintedGradientImageWithColor:[UIColor colorWithHexString:@"F2F2F2"]];
