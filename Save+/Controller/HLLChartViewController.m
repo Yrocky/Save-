@@ -70,6 +70,12 @@
 }
 #pragma mark - API
 
+- (void) reloadChartDataAtDate:(NSDate *)date animaiton:(BOOL)animation{
+
+    self.pieChart.displayAnimated = animation;
+    
+    [self reloadChartDataAtDate:date];
+}
 - (void) reloadChartDataAtDate:(NSDate *)date{
     
     NSArray *items = [self mapBillToItemAtDate:date];

@@ -10,6 +10,8 @@
 
 @interface HLLChartViewController : UIViewController
 
+- (void) reloadChartDataAtDate:(NSDate *)date animaiton:(BOOL)animation;
+
 - (void) reloadChartDataAtDate:(NSDate *)date;
 
 @end

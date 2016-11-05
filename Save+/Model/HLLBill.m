@@ -22,10 +22,10 @@
 }
 
 // 设置主键
-//+ (NSString *)primaryKey {
-//    
-//    return @"";
-//}
++ (NSString *)primaryKey {
+    
+    return @"dateDetailString";
+}
 
 // Specify properties to ignore (Realm won't persist these)
 

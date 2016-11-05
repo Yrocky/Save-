@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		189E788E62DD12FA304C3591 /* libPods-Save+.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F22C38795282ED054C65B /* libPods-Save+.a */; };
+		D717DAB71DCDC74B00FDCDD4 /* HLLDeleteBillView.m in Sources */ = {isa = PBXBuildFile; fileRef = D717DAB61DCDC74B00FDCDD4 /* HLLDeleteBillView.m */; };
+		D717DAB91DCDC75500FDCDD4 /* HLLDeleteBillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D717DAB81DCDC75500FDCDD4 /* HLLDeleteBillView.xib */; };
 		D732BE731D2A04B9000029A9 /* HLLLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D732BE721D2A04B9000029A9 /* HLLLocationView.m */; };
 		D7345BB01DCC57C3007D149D /* HLLCustomColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BAF1DCC57C3007D149D /* HLLCustomColorViewController.m */; };
 		D7345BD41DCC7325007D149D /* DRColorPicker+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BB31DCC7325007D149D /* DRColorPicker+UIColor.m */; };
@@ -28,6 +30,8 @@
 		D7345BE31DCC7325007D149D /* DRColorPickerWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BD11DCC7325007D149D /* DRColorPickerWheelView.m */; };
 		D7345BE41DCC7325007D149D /* DRColorPickerWheelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BD31DCC7325007D149D /* DRColorPickerWheelViewController.m */; };
 		D7345BE71DCC8551007D149D /* HLLLimitTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BE61DCC8551007D149D /* HLLLimitTextField.m */; };
+		D7345BEA1DCD9241007D149D /* HLLModifyBillView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7345BE91DCD9241007D149D /* HLLModifyBillView.m */; };
+		D7345BEC1DCD9260007D149D /* HLLModifyBillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7345BEB1DCD9260007D149D /* HLLModifyBillView.xib */; };
 		D73A17F81DCC273D00A74A02 /* HLLCategorySettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D73A17F61DCC273D00A74A02 /* HLLCategorySettingCell.m */; };
 		D73A17F91DCC273D00A74A02 /* HLLCategorySettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D73A17F71DCC273D00A74A02 /* HLLCategorySettingCell.xib */; };
 		D744339A1D2A592900693546 /* ZASyncURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D74433991D2A592900693546 /* ZASyncURLConnection.m */; };
@@ -249,6 +253,9 @@
 		010F22C38795282ED054C65B /* libPods-Save+.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Save+.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4564418ADCC49F43508F4033 /* Pods-Save+.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save+.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Save+/Pods-Save+.debug.xcconfig"; sourceTree = "<group>"; };
 		68EF3EEAB3954E1D6127091E /* Pods-Save+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save+.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save+/Pods-Save+.release.xcconfig"; sourceTree = "<group>"; };
+		D717DAB51DCDC74B00FDCDD4 /* HLLDeleteBillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLDeleteBillView.h; sourceTree = "<group>"; };
+		D717DAB61DCDC74B00FDCDD4 /* HLLDeleteBillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLDeleteBillView.m; sourceTree = "<group>"; };
+		D717DAB81DCDC75500FDCDD4 /* HLLDeleteBillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLLDeleteBillView.xib; sourceTree = "<group>"; };
 		D732BE711D2A04B9000029A9 /* HLLLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLLocationView.h; sourceTree = "<group>"; };
 		D732BE721D2A04B9000029A9 /* HLLLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLLocationView.m; sourceTree = "<group>"; };
 		D7345BAE1DCC57C3007D149D /* HLLCustomColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCustomColorViewController.h; sourceTree = "<group>"; };
@@ -289,6 +296,9 @@
 		D7345BD31DCC7325007D149D /* DRColorPickerWheelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRColorPickerWheelViewController.m; sourceTree = "<group>"; };
 		D7345BE51DCC8551007D149D /* HLLLimitTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLLimitTextField.h; sourceTree = "<group>"; };
 		D7345BE61DCC8551007D149D /* HLLLimitTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLLimitTextField.m; sourceTree = "<group>"; };
+		D7345BE81DCD9241007D149D /* HLLModifyBillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLModifyBillView.h; sourceTree = "<group>"; };
+		D7345BE91DCD9241007D149D /* HLLModifyBillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLModifyBillView.m; sourceTree = "<group>"; };
+		D7345BEB1DCD9260007D149D /* HLLModifyBillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLLModifyBillView.xib; sourceTree = "<group>"; };
 		D73A17F31DCB821200A74A02 /* NoticationName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticationName.h; sourceTree = "<group>"; };
 		D73A17F51DCC273D00A74A02 /* HLLCategorySettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCategorySettingCell.h; sourceTree = "<group>"; };
 		D73A17F61DCC273D00A74A02 /* HLLCategorySettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCategorySettingCell.m; sourceTree = "<group>"; };
@@ -623,6 +633,12 @@
 				D74433AE1D2B525A00693546 /* HLLBillSectionHeaderView.xib */,
 				D74433B91D2BA76900693546 /* HLLChartView.h */,
 				D74433BA1D2BA76900693546 /* HLLChartView.m */,
+				D7345BE81DCD9241007D149D /* HLLModifyBillView.h */,
+				D7345BE91DCD9241007D149D /* HLLModifyBillView.m */,
+				D7345BEB1DCD9260007D149D /* HLLModifyBillView.xib */,
+				D717DAB51DCDC74B00FDCDD4 /* HLLDeleteBillView.h */,
+				D717DAB61DCDC74B00FDCDD4 /* HLLDeleteBillView.m */,
+				D717DAB81DCDC75500FDCDD4 /* HLLDeleteBillView.xib */,
 			);
 			name = Check;
 			sourceTree = "<group>";
@@ -1189,8 +1205,10 @@
 				D73A17F91DCC273D00A74A02 /* HLLCategorySettingCell.xib in Resources */,
 				D766A8471D203637005D769C /* Check.storyboard in Resources */,
 				D74433E31D2BB9E200693546 /* Info.plist in Resources */,
+				D717DAB91DCDC75500FDCDD4 /* HLLDeleteBillView.xib in Resources */,
 				D75BCB081D18D88400FDF5F3 /* HLLCategoryCollectionViewCell.xib in Resources */,
 				D74433AF1D2B525A00693546 /* HLLBillSectionHeaderView.xib in Resources */,
+				D7345BEC1DCD9260007D149D /* HLLModifyBillView.xib in Resources */,
 				D75BCAFE1D18D58200FDF5F3 /* HLLCategoryView.xib in Resources */,
 				D75BCAE51D13EF8900FDF5F3 /* Lato-ThinItalic.ttf in Resources */,
 				D75BCAE41D13EF8900FDF5F3 /* Lato-Thin.ttf in Resources */,
@@ -1375,6 +1393,7 @@
 				D74433E01D2BB9E200693546 /* LineGraphMarker.m in Sources */,
 				D7CF85FC1D2D42CD0084227D /* TBCoordinateQuadTree.m in Sources */,
 				D78DD6731D2836850060B2E7 /* FSCalendarAnimator.m in Sources */,
+				D717DAB71DCDC74B00FDCDD4 /* HLLDeleteBillView.m in Sources */,
 				D75BCAE91D13F04D00FDF5F3 /* Lato-Regular.ttf in Sources */,
 				D78015E71D2611EE00A0CD13 /* LocationHelper.m in Sources */,
 				D7345BD91DCC7325007D149D /* DRColorPickerGridView.m in Sources */,
@@ -1437,6 +1456,7 @@
 				D78DD6781D2836850060B2E7 /* FSCalendarEventIndicator.m in Sources */,
 				D74433E21D2BB9E200693546 /* PieChart.m in Sources */,
 				D7345BE41DCC7325007D149D /* DRColorPickerWheelViewController.m in Sources */,
+				D7345BEA1DCD9241007D149D /* HLLModifyBillView.m in Sources */,
 				D766A83A1D201271005D769C /* HLLNoteView.m in Sources */,
 				D74433DE1D2BB9E200693546 /* HorizontalStackBarChart.m in Sources */,
 				D744339D1D2A59A000693546 /* UIImage+ImageEffects.m in Sources */,

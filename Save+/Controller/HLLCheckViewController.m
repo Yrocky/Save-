@@ -15,6 +15,8 @@
 #import "HLLBillManager.h"
 #import "HLLChartView.h"
 #import "HLLChartViewController.h"
+#import "HLLModifyBillView.h"
+#import "HLLDeleteBillView.h"
 
 @interface HLLCheckViewController ()<FSCalendarDataSource,FSCalendarDelegate,FSCalendarDelegateAppearance,UITableViewDataSource,UITableViewDelegate,HLLBillTableViewCellDelegate>
 
@@ -139,7 +141,7 @@
     [self.billTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     
     // chart需要进行同类型的记账信息归类
-    [self.chartViewController reloadChartDataAtDate:date];
+    [self.chartViewController reloadChartDataAtDate:date animaiton:YES];
     
     NSLog(@"queryBillsDataAtDate:%@",[self.billManager queryBillsDataAtDate:date]);
     
@@ -221,13 +223,20 @@
     
     HLLBill * bill = self.bills[indexPath.row];
     
-    [self.billManager deleteBill:bill];
+    HLLDeleteBillView * deleteBillView = [HLLDeleteBillView hll_loadWithNib];
+    deleteBillView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
+    [deleteBillView configureDeleteBillWithTitle:@"确定删除本条记账记录么？" cancelAction:nil sureAction:^(){
     
-    [self.bills removeObject:bill];
+        [self.billManager deleteBill:bill];
+        
+        [self.bills removeObject:bill];
+        
+        [self.calendarView reloadData];
+        
+        [self.chartViewController reloadChartDataAtDate:self.selectedDate animaiton:NO];
+    }];
     
-    [self calendar:self.calendarView didSelectDate:self.selectedDate];
-    
-    [self.calendarView reloadData];
+    [deleteBillView showDeleteBillViewForView:nil];
 }
 
 // 编辑
@@ -237,6 +246,27 @@
     
     HLLBill * bill = self.bills[indexPath.row];
 
+    HLLModifyBillView * modifyBillView = [HLLModifyBillView hll_loadWithNib];
+    modifyBillView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
+    [modifyBillView configureModifyViewWithBill:bill];
+    [modifyBillView commitModifyBillInfo:^(NSString *amount,NSString *describe){
+    
+        [_billManager updateBill:bill action:^{
+            
+            if ([amount doubleValue] > 0) {
+                bill.amount = @([amount doubleValue]);
+            }
+            
+            if (describe) {
+                bill.note = describe;
+            }
+        }];
+        
+        [self.chartViewController reloadChartDataAtDate:self.selectedDate animaiton:NO];
+
+        [self.billTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }];
+    [modifyBillView showModifyBillViewForView:nil];
 }
 
 /*
